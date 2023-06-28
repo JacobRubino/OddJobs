@@ -1,0 +1,28 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000000;
+  padding: 10px;
+}
+
+.header-oddjobs {
+  color: aliceblue;
+  margin: 0;
+  margin-left: 50px;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links a {
+  margin-left: 18px;
+  color: aliceblue;
+  text-decoration: none;
+}
+
+.nav-links {
+  margin-left: auto;
+  margin-right: 50px;
+}
