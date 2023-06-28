@@ -7,7 +7,8 @@ function App() {
   return (
     <div className="start">
       <Navbar />
-      <route path='/' exact component={Home} />
+      {/* <route path='/' exact component={Home} /> */}
+      <Home />
     </div>
   );
 }

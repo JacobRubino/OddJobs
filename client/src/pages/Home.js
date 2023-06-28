@@ -1,15 +1,15 @@
 import React from 'react';
-import Carousel from './Carousel';
+import Carousel from '../components/carousel';
+
 const Home = () => {
-  const images = [
-  ];
-  const imagetext = [   
-  ];
+  const images = [];
+  const imageTexts = [];
+
   return (
     <div>
-      <Carousel image={images} imagetexts={imagetext} />     
+      <h1>Home Page</h1>
+      <Carousel images={images} imageTexts={imageTexts} />
     </div>
-    
   );
 };
 
