@@ -1,58 +1,52 @@
 [
   {
     "name": "Brian Kernighan",
-    "skills": ["AWK", "AMPL", "Unix"]
+    "skills": ["Plumbing", "Electrical"],
+    "rate": 70
   },
   {
     "name": "Max Kanat-Alexander",
-    "skills": ["Java", "Perl", "Apache", "Python"]
+    "skills": ["Help Moving", "TV Mounting", "Packing"],
+    "rate": 65
   },
   {
     "name": "Amiko",
-    "skills": ["NodeJS", "MySQL", "MongoDB", "React", "CSS-in-JS"]
+    "skills": ["Painting", "Cleaning", "Laundry"],
+    "rate": 40
   },
   {
-    "name": "Kent Beck",
-    "skills": [
-      "Test-Driven Development",
-      "Extreme Programming",
-      "Software Design Patterns",
-      "JUnit"
-    ]
+    "name": "Alicia Beck",
+    "skills": ["Laundry", "Yard Work", "Dog-Walker"],
+    "rate": 45
   },
   {
     "name": "Edward V. Berard",
-    "skills": ["Object-Oriented Design"]
+    "skills": ["Snow Removal"],
+    "rate": 70
   },
   {
     "name": "Alan Kay",
-    "skills": [
-      "Graphical User Interface (GUI) Design",
-      "Jazz Guitar",
-      "Education"
-    ]
+    "skills": ["Flooring and Tiling Help", "Painting", "TV Mounting"],
+    "rate": 50
   },
   {
-    "name": "C.A.R. Hoare",
-    "skills": ["Algorithms", "Quicksort", "Hoare Logic"]
+    "name": "Langston Walker",
+    "skills": ["Plumbing", "Carpentry"],
+    "rate": 80
   },
   {
     "name": "David Thomas",
-    "skills": ["Author", "Code Kata", "Ruby", "Pragmatic Programming"]
+    "skills": ["Snow Removal", "Wallpapering"],
+    "rate": 75
   },
   {
     "name": "Donald Knuth",
-    "skills": ["TeX Computer Typesetting", "Algorithms", "Author"]
+    "skills": ["Waiting in Line", "Cooking"],
+    "rate": 40
   },
   {
     "name": "Lernantino",
-    "skills": [
-      "JavaScript",
-      "CSS",
-      "HTML",
-      "Design Systems",
-      "Typescript",
-      "PWAs"
-    ]
+    "skills": ["Painting", "Laundry", "Dog-Walker"],
+    "rate": 38
   }
 ]
