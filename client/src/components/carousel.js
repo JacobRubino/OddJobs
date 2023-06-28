@@ -4,13 +4,12 @@ const Carousel = ({ images }) => {
   const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
-    // Start the image rotation when the component mounts
     const interval = setInterval(() => {
       setCurrentImage((prevImage) => (prevImage + 1) % images.length);
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [images.length]);
+  }, [images]);
 
   return (
     <div className="carousel">
