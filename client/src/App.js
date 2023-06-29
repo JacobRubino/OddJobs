@@ -1,16 +1,23 @@
 // import logo from './logo.svg';
 // import './App.css';
-import Navbar from './pages/navbar';
-import React from'react';
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './pages/Home';
-function App() {
+import Feedback from './pages/feedback'
+import Navbar from './pages/navbar';
+
+const App = () => {
   return (
-    <div className="start">
-      <Navbar />
-      {/* <route path='/' exact component={Home} /> */}
-      <Home />
-    </div>
+    <Router>
+      <div>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/feedback" component={Feedback} />
+        </Switch>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;

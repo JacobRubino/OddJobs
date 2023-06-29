@@ -11,6 +11,12 @@ const Navbar = () => {
         <a href="">Contact</a>
         <a href="">Log in</a>
         <a href="">Sign up</a>
+
+       
+      <button onClick={() => window.location.href = '/feedback'}>
+        Go to Feedback
+      </button>
+
       </div>
     </div>
   );
