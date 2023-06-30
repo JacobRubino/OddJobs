@@ -1,3 +1,4 @@
 const Profile = require('./Profile');
+const State = require('./state');
 
-module.exports = { Profile };
+module.exports = { Profile, State };
