@@ -9,8 +9,8 @@ const profileSchema = new Schema(
       trim: true,
     },
     skills: {
-      type: String,
-      trim: true,
+      type: [String],
+      required: true
     },
     rate: {
       type: Number,
@@ -21,6 +21,7 @@ const profileSchema = new Schema(
       required: true
     }
   }
+
 );
 
 const Profile = model('Profile', profileSchema);
