@@ -2,51 +2,61 @@
   {
     "name": "Brian Kernighan",
     "skills": ["Plumbing", "Electrical"],
-    "rate": 70
+    "rate": 70,
+    "location": "RI"
   },
   {
     "name": "Max Kanat-Alexander",
     "skills": ["Help Moving", "TV Mounting", "Packing"],
-    "rate": 65
+    "rate": 65,
+    "location": "NY"
   },
   {
     "name": "Amiko",
     "skills": ["Painting", "Cleaning", "Laundry"],
-    "rate": 40
+    "rate": 40,
+    "location": "CA"
   },
   {
     "name": "Alicia Beck",
     "skills": ["Laundry", "Yard Work", "Dog-Walker"],
-    "rate": 45
+    "rate": 45,
+    "location": "GA"
   },
   {
     "name": "Edward V. Berard",
     "skills": ["Snow Removal"],
-    "rate": 70
+    "rate": 70,
+    "location": "CT"
   },
   {
     "name": "Alan Kay",
     "skills": ["Flooring and Tiling Help", "Painting", "TV Mounting"],
-    "rate": 50
+    "rate": 50,
+    "location": "NC"
   },
   {
     "name": "Langston Walker",
     "skills": ["Plumbing", "Carpentry"],
-    "rate": 80
+    "rate": 80,
+    "location": "CA"
   },
   {
     "name": "David Thomas",
     "skills": ["Snow Removal", "Wallpapering"],
-    "rate": 75
+    "rate": 75,
+    "location": "NY"
   },
   {
     "name": "Donald Knuth",
     "skills": ["Waiting in Line", "Cooking"],
-    "rate": 40
+    "rate": 40,
+    "location": "OR"
   },
   {
     "name": "Lernantino",
     "skills": ["Painting", "Laundry", "Dog-Walker"],
-    "rate": 38
+    "rate": 38,
+    "location": "NY"
   }
 ]
