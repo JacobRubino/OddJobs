@@ -9,6 +9,18 @@ const resolvers = {
     profile: async (parent, { profileId }) => {
       return Profile.findOne({ _id: profileId });
     },
+
+    // come up w/ a name for your fucntion
+    // have a query that take a state and or skill
+    workers: async (parent, variables) => {
+      const location = variables.location;
+      const skill = variables.skill;
+      const workers = Profile.find({ location: location, skills: skill })
+      console.log(workers)
+      return workers
+    }
+    // that query uses the find op to get all the users that match that criter
+    // send the result back
   },
 
   Mutation: {

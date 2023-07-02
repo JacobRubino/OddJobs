@@ -10,6 +10,7 @@ const typeDefs = gql`
   type Query {
     profiles: [Profile]!
     profile(profileId: ID!): Profile
+    workers(location: String, skill: String): [Profile]
   }
 
   type Mutation {
