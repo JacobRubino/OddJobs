@@ -49,6 +49,20 @@ const resolvers = {
         { new: true }
       );
     },
+    login: async (parent, { email, password}) => {
+      const profile = await Profile.findOneAndDelete({ email })
+
+      if(!profile) {
+        throw new AuthenticationError('No profile was found with that email!')
+      }
+      const correctPassword = await profile.isCorrectPAssword(password)
+
+      if(!correctPassword) {
+        throw new AuthenticationError("Incorrect Password!")
+      }
+      const token = signToken(profile)
+      return {token, profile}
+    }
   },
 };
 
