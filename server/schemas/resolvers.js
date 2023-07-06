@@ -29,7 +29,7 @@ const resolvers = {
     addProfile: async (parent, { name, email, password }) => {
       const profile = await Profile.create({ name, email, password });
       const token = signToken(profile);
-      return { token, user };
+      return { token, profile };
     },
     addSkill: async (parent, { profileId, skill }) => {
       return Profile.findOneAndUpdate(
@@ -54,15 +54,15 @@ const resolvers = {
       );
     },
     login: async (parent, { email, password}) => {
-      const profile = await Profile.findOneAndDelete({ email })
+      const profile = await Profile.findOne({ email });
 
       if(!profile) {
-        throw new AuthenticationError('No profile was found with that email!')
+        throw new AuthenticationError('No profile was found with that email!');
       }
-      const correctPassword = await profile.isCorrectPAssword(password)
+      const correctPassword = await profile.isCorrectPAssword(password);
 
       if(!correctPassword) {
-        throw new AuthenticationError("Incorrect Password!")
+        throw new AuthenticationError("Incorrect Password!");
       }
       const token = signToken(profile)
       return {token, profile}
