@@ -1,0 +1,13 @@
+.footerContainer {
+  background-color: rgb(35, 36, 55);  
+  height: 10rem;
+}
+.footerElements {
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footerContent {
+  padding: 1rem .5rem
+}

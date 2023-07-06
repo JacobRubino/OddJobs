@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import Feedback from './pages/Feedback';
+import Feedback from './pages/feedback';
 import Navbar from './pages/navbar';
-
+import Footer from './pages/Footer';
 const App = () => {
   return (
     <Router>
@@ -14,6 +14,7 @@ const App = () => {
           <Route path="/feedback" element={<Feedback />} />
         </Routes>
       </div>
+      <Footer />
     </Router>
   );
 };
