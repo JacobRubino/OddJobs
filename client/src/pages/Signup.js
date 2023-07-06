@@ -23,7 +23,7 @@ const Signup = () => {
             [name]: value,
         })
     }
-    const handleFormSubmit = (event) => {
+    const handleFormSubmit = async (event) => {
         event.preventDefault()
         console.log(formState)
 
