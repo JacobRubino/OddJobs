@@ -16,7 +16,7 @@ const Signup = () => {
     })
     const [addProfile, {error, data}] = useMutation(ADD_PROFILE)
 
-    const handleChange = (even) => {
+    const handleChange = (event) => {
         const {name, value} = event.target
         setFormState({
             ...formState,
