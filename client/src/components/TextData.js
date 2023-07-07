@@ -18,3 +18,5 @@ const SliderTextDescription = [
   "Need a cook for an event?",
   "the dogs dont know how to walk themselves?"
 ]
+module.exports = { SliderTextData, SliderTextDescription}
+
