@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import SliderData from '../components/SliderData';
+import { SliderTextData, SliderTextDescription} from '../components/TextData';
 import { FaArrowAltCircleRight } from 'react-icons/fa';
 import { FaArrowAltCircleLeft } from 'react-icons/fa';
 import './home.css';
 
 const Home = () => {
+  
   const [current, setCurrent] = useState(0);
   const length = SliderData.length;
 
   useEffect(() => {
     const interval = setInterval(() => {
+      setCurrent((prevText) => (prevText + 1) % SliderTextData.length);
+      setCurrent((prevText) => (prevText + 1) % SliderTextDescription.length);
       setCurrent((prevImage) => (prevImage + 1) % SliderData.length);
     }, 6000);
 
@@ -33,18 +37,50 @@ const Home = () => {
       <section className='slider'>
         <FaArrowAltCircleLeft className='arrow-left' onClick={prevSlide} />
         <FaArrowAltCircleRight className='arrow-right' onClick={nextSlide} />
-        {SliderData.map((slide, index) => {
-          return (
+        {SliderData?.map((slide, index) => {
+          return (    
             <div
               className={index === current ? 'slide active' : 'slide'}
               key={index}
             >
               {index === current && (
-                <img src={slide.image} alt='travel image' className='image' />
+                <div>
+                  <img src={slide.image} alt='travel image' className='image' />
+                </div>
               )}
             </div>
           );
         })}
+        <div className='textBox'>
+        {SliderTextData?.map((text, index) => {
+          return (    
+            <div
+              className={index === current ? 'text active' : 'text'}
+              key={index}
+            >
+              {index === current && (
+                <div>
+                  <h1 className='titleText'>{text}</h1>
+                </div>
+              )}
+            </div>
+          );
+      })}
+      {SliderTextDescription?.map((text, index) => {
+          return (    
+            <div
+              className={index === current ? 'text active' : 'text'}
+              key={index}
+            >
+              {index === current && (
+                <div>
+                  <p className='subText'>{text}</p>
+                </div>
+              )}
+            </div>
+          );
+      })}
+      </div>
       </section>
     </div>
   );
