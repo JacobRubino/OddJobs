@@ -4,8 +4,10 @@ const typeDefs = gql`
   type Profile {
     _id: ID
     name: String
-    email: String
     skills: [String]!
+    location: String
+    email: String
+    password: String
   }
 
   type Auth {
@@ -19,7 +21,7 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addProfile(name: String!, email: String!): Profile
+    addProfile(name: String!, email: String!, password: String!): Auth
     addSkill(profileId: ID!, skill: String!): Profile
     removeProfile(profileId: ID!): Profile
     removeSkill(profileId: ID!, skill: String!): Profile
