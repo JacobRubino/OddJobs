@@ -1,4 +1,6 @@
 const { Profile } = require('../models');
+const { AuthenticationError } = require('apollo-server-express');
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
@@ -10,7 +12,7 @@ const resolvers = {
       return Profile.findOne({ _id: profileId });
     },
 
-    // come up w/ a name for your fucntion
+    // come up w/ a name for your function
     // have a query that take a state and or skill
     workers: async (parent, variables) => {
       const location = variables.location;
@@ -19,13 +21,15 @@ const resolvers = {
       console.log(workers)
       return workers
     }
-    // that query uses the find op to get all the users that match that criter
+    // that query uses the find op to get all the users that match that critera
     // send the result back
   },
 
   Mutation: {
-    addProfile: async (parent, { name }) => {
-      return Profile.create({ name });
+    addProfile: async (parent, { name, email, password }) => {
+      const profile = await Profile.create({ name, email, password });
+      const token = signToken(profile);
+      return { token, profile };
     },
     addSkill: async (parent, { profileId, skill }) => {
       return Profile.findOneAndUpdate(
@@ -50,15 +54,15 @@ const resolvers = {
       );
     },
     login: async (parent, { email, password}) => {
-      const profile = await Profile.findOneAndDelete({ email })
+      const profile = await Profile.findOne({ email });
 
       if(!profile) {
-        throw new AuthenticationError('No profile was found with that email!')
+        throw new AuthenticationError('No profile was found with that email!');
       }
-      const correctPassword = await profile.isCorrectPAssword(password)
+      const correctPassword = await profile.isCorrectPAssword(password);
 
       if(!correctPassword) {
-        throw new AuthenticationError("Incorrect Password!")
+        throw new AuthenticationError("Incorrect Password!");
       }
       const token = signToken(profile)
       return {token, profile}

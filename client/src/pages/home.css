@@ -4,6 +4,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  color: aliceblue;
 }
 .image {
   width: 1000px;
@@ -29,4 +31,26 @@
   cursor: pointer;
   z-index: 10;
   user-select: none;
+}
+.textBox {
+  padding: 3px;
+  position: absolute;
+  width: auto;
+  top: 60%;
+  left: 40%;
+  right: 40%;
+  
+}
+.subText {
+  backdrop-filter: blur(10px) saturate(50%);
+  background-color: rgba(10, 9, 12, 0.3);
+  border-radius: 10px;
+  color: rgb(213, 214, 223);
+}
+.titleText {
+  margin: auto;
+  backdrop-filter: blur(10px) saturate(50%);
+  background-color: rgba(10, 9, 12, 0.3);
+  border-radius: 10px;
+  color: rgb(213, 214, 223);
 }
