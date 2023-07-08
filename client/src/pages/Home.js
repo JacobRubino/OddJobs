@@ -3,6 +3,12 @@ import SliderData from '../components/SliderData';
 import { SliderTextData, SliderTextDescription} from '../components/TextData';
 import { FaArrowAltCircleRight } from 'react-icons/fa';
 import { FaArrowAltCircleLeft } from 'react-icons/fa';
+
+import { ButtonGroup } from 'react-bootstrap/ButtonGroup';
+import { Dropdown } from 'react-bootstrap/Dropdown';
+import { DropdownButton } from 'react-bootstrap/DropdownButton';
+import { SplitButton } from 'react-bootstrap/SplitButton';
+
 import './home.css';
 
 const Home = () => {
@@ -31,6 +37,50 @@ const Home = () => {
   if (!Array.isArray(SliderData) || SliderData.length <= 0) {
     return null;
   }
+
+
+  // drop down button
+
+  function ButtonSizesExample() {
+    return (
+      <>
+        <div className="mb-2">
+          {[DropdownButton, SplitButton].map((DropdownType, idx) => (
+            <DropdownType
+              as={ButtonGroup}
+              key={idx}
+              id={`dropdown-button-drop-${idx}`}
+              size="lg"
+              title="Drop large"
+            >
+              <Dropdown.Item eventKey="1">Action</Dropdown.Item>
+              <Dropdown.Item eventKey="2">Another action</Dropdown.Item>
+              <Dropdown.Item eventKey="3">Something else here</Dropdown.Item>
+            </DropdownType>
+          ))}
+        </div>
+        <div>
+        {[DropdownButton, SplitButton].map((DropdownType, idx) => (
+            <DropdownType
+              as={ButtonGroup}
+              key={idx}
+              id={`dropdown-button-drop-${idx}`}
+              size="lg"
+              title="Drop large"
+            >
+              <Dropdown.Item eventKey="1">Action</Dropdown.Item>
+              <Dropdown.Item eventKey="2">Another action</Dropdown.Item>
+              <Dropdown.Item eventKey="3">Something else here</Dropdown.Item>
+            </DropdownType>
+          ))}
+        </div>
+      </>
+    );
+  }
+
+
+// APP BELOW
+
 
   return (
     <div>

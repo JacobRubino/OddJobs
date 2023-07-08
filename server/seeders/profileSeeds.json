@@ -3,6 +3,7 @@
     "name": "Brian Gomez",
     "skills": ["Plumbing", "Electrical"],
     "rate": 70,
+    "city": "Providence",
     "location": "RI",
     "email": "briangomez@gmail.com",
     "password": "password02"
@@ -11,6 +12,7 @@
     "name": "Max Jean",
     "skills": ["Help Moving", "TV Mounting", "Packing"],
     "rate": 65,
+    "city": "Bronx",
     "location": "NY",
     "email": "maxjean@gmail.com",
     "password": "password03"
@@ -19,6 +21,7 @@
     "name": "Amiko Bee",
     "skills": ["Painting", "Cleaning", "Laundry"],
     "rate": 40,
+    "city": "Los Angeles",
     "location": "CA",
     "email": "amikobee@gmail.com",
     "password": "password04"
@@ -27,6 +30,7 @@
     "name": "Alicia Beck",
     "skills": ["Laundry", "Yard Work", "Dog-Walker"],
     "rate": 45,
+    "city": "Atlanta",
     "location": "GA",
     "email": "aliciabeck@gmail.com",
     "password": "password05"
@@ -35,6 +39,7 @@
     "name": "Edward Berard",
     "skills": ["Snow Removal"],
     "rate": 70,
+    "city": "Hartford",
     "location": "CT",
     "email": "edwardberard@gmail.com",
     "password": "password06"
@@ -43,6 +48,7 @@
     "name": "Alan Kay",
     "skills": ["Flooring and Tiling Help", "Painting", "TV Mounting"],
     "rate": 50,
+    "city": "Raleigh",
     "location": "NC",
     "email": "alankay@gmail.com",
     "password": "password07"
@@ -51,6 +57,7 @@
     "name": "Langston Walker",
     "skills": ["Plumbing", "Carpentry"],
     "rate": 80,
+    "city": "Oakland",
     "location": "CA",
     "email": "langstonwalker@gmail.com",
     "password": "password08"
@@ -59,6 +66,7 @@
     "name": "David Thomas",
     "skills": ["Snow Removal", "Wallpapering"],
     "rate": 75,
+    "city": "Brooklyn",
     "location": "NY",
     "email": "davidthomas@gmail.com",
     "password": "password09"
@@ -67,6 +75,7 @@
     "name": "Donald Knuth",
     "skills": ["Waiting in Line", "Cooking"],
     "rate": 40,
+    "city": "Portland",
     "location": "OR",
     "email": "donaldknuth@gmail.com",
     "password": "password10"
@@ -75,6 +84,7 @@
     "name": "Joe Sas",
     "skills": ["Painting", "Laundry", "Dog-Walker"],
     "rate": 38,
+    "city": "Queens",
     "location": "NY",
     "email": "joesas@gmail.com",
     "password": "password11"
