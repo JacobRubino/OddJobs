@@ -75,7 +75,6 @@ const Signup = () => {
                                     value={formState.city}
                                     onChange={handleChange}
                                 />
-                                
                                 <input 
                                     className='from-input'
                                     placeholdder="Your State"
@@ -84,7 +83,6 @@ const Signup = () => {
                                     value={formState.state}
                                     onChange={handleChange}
                                 />
-                                
                                 <input 
                                     className='from-input'
                                     placeholdder="******"
