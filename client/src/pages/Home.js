@@ -104,12 +104,27 @@ const Home = () => {
       })}
       </div>
       </section>
-      chicken
+      <h1>What Do You Need Help With Today?</h1>
 
       <form onSubmit={handleSubmit}>
         <select>
           <option></option>
-          <option>painting</option>
+          <option>Carpentry</option>
+          <option>Cleaning</option>
+          <option>Cooking</option>
+          <option>Dog-Walking</option>
+          <option>Electrical</option>
+          <option>Flooring & Tiling Help</option>
+          <option>Help Moving</option>
+          <option>Laundry</option>
+          <option>Painting</option>
+          <option>Packing</option>
+          <option>Plumbing</option>
+          <option>Snow-Removal</option>
+          <option>TV-Mounting</option>
+          <option>Waiting in Line</option>
+          <option>Wallpapering</option>
+          <option>Yard Work</option>
         </select>
         <select onChange={handleLocationChange}>
           <option></option>
