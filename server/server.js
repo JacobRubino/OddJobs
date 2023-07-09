@@ -1,17 +1,25 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
+const cors = require('cors'); // Add this line
 const path = require('path');
-const {authMiddleware} = require('./utils/auth')
+const { authMiddleware } = require('./utils/auth');
+const { Profile } = require('./models');
 
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
 
 const PORT = process.env.PORT || 3007;
 const app = express();
+
+app.use(cors()); // Enable CORS
+
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  context: authMiddleware,
+  context: async ({ req }) => {
+    const contractorNames = await Profile.find().distinct('name');
+    return { contractorNames };
+  },
 });
 
 app.use(express.urlencoded({ extended: false }));
@@ -25,18 +33,18 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
-// Create a new instance of an Apollo server with the GraphQL schema
-const startApolloServer = async () => {
+// Apply the Apollo Server middleware
+async function startServer() {
   await server.start();
   server.applyMiddleware({ app });
-  
-  db.once('open', () => {
-    app.listen(PORT, () => {
-      console.log(`API server running on port ${PORT}!`);
-      console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
-    })
-  })
-  };
-  
-  // Call the async function to start the server
-  startApolloServer();
+}
+
+startServer();
+
+// Start the server
+db.once('open', () => {
+  app.listen(PORT, () => {
+    console.log(`API server running on port ${PORT}!`);
+    console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
+  });
+});

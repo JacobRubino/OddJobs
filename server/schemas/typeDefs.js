@@ -14,10 +14,12 @@ const typeDefs = gql`
     token: ID!
     profile: Profile
   }
+
   type Query {
     profiles: [Profile]!
     profile(profileId: ID!): Profile
     workers(location: String, skill: String): [Profile]
+    contractorNames: [String]!  # Add the contractorNames field
   }
 
   type Mutation {

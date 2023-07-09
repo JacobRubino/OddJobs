@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import Feedback from './pages/feedback';
+import Feedback from './pages/Feedback';
 import Navbar from './pages/navbar';
 import Footer from './pages/Footer';
 const App = () => {
@@ -18,5 +18,6 @@ const App = () => {
     </Router>
   );
 };
+
 
 export default App;

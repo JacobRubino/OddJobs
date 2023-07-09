@@ -12,6 +12,12 @@ const resolvers = {
       return Profile.findOne({ _id: profileId });
     },
 
+    contractorNames: async () => {
+      const profiles = await Profile.find();
+      return profiles.map((profile) => profile.name);
+    },
+  
+
     // come up w/ a name for your function
     // have a query that take a state and or skill
     workers: async (parent, variables) => {

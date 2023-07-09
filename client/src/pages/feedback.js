@@ -1,42 +1,50 @@
 import React, { useState } from 'react';
-import './feedback.css'; // Import the CSS file for Feedback component
+import { useQuery } from '@apollo/client';
+import { GET_CONTRACTOR_NAMES } from '../utils/queries';
+
+import './feedback.css';
 
 const Feedback = () => {
   const [feedback, setFeedback] = useState('');
   const [starRating, setStarRating] = useState('');
 
+  const { loading, error, data } = useQuery(GET_CONTRACTOR_NAMES);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error fetching contractor names: {error.message}</div>;
+
+  const { contractorNames } = data;
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    // Validate starRating value
-    if (starRating < 1 || starRating > 5) {
-      alert('Please enter a star rating between 1 and 5.');
-      return;
-    }
-
-    // Submit the feedback
-    console.log('Feedback submitted:', feedback);
-    console.log('Star rating:', starRating);
-
-    // Reset form fields
-    setFeedback('');
-    setStarRating('');
+    // Rest of the handleSubmit function
   };
 
   return (
     <div className="feedback-container">
-      <h2 className="text-center">Your voice matters!!! Help others by providing feedback for the contractor you hired.</h2>
+      <h2 className="text-center">
+        Your voice matters!!! Help others by providing feedback for the contractor you hired.
+      </h2>
       <form className="new-review-form" onSubmit={handleSubmit}>
-        <input
+        <select
           className="form-control input-field"
-          type="text"
-          id="review-title"
-          name="user-name"
-          placeholder="Contractor Name"
+          id="contractor-name"
+          name="contractor-name"
           value={feedback}
           onChange={(e) => setFeedback(e.target.value)}
-        />
-        <input
+        >
+          <option value="">Select Contractor</option>
+          {contractorNames.map((name) => (
+            <option key={name} value={name}>
+              {name}
+            </option>
+          ))}
+        </select>
+        {/* Rest of the form */}
+        {/*
+          Add the following input field for star rating
+        */}
+  <input
           type="number"
           id="star_rating"
           name="star_rating"
@@ -65,3 +73,4 @@ const Feedback = () => {
 };
 
 export default Feedback;
+
