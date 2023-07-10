@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom'
 import { useMutation } from '@apollo/client'
 import { ADD_PROFILE } from '../utils/mutations'
 
+
 import Auth  from '../utils/auth'
+
+
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 
 const Signup = () => {
@@ -28,6 +32,11 @@ const Signup = () => {
     const handleFormSubmit = async (event) => {
         event.preventDefault()
         console.log(formState)
+
+        if (!emailRegex.test(formState.email)) {
+            console.log('Email validation error: Invalid email');
+            return;
+        }
 
         try {
             const {data} = await addProfile({

@@ -17,7 +17,7 @@ const resolvers = {
     workers: async (parent, variables) => {
       const location = variables.location;
       const skill = variables.skill;
-      const workers = Profile.find({ location: location, skills: skill })
+      const workers = await Profile.find({ location: location, skills: skill })
       console.log(workers)
       return workers
     }
@@ -26,8 +26,8 @@ const resolvers = {
   },
 
   Mutation: {
-    addProfile: async (parent, { name, email, password }) => {
-      const profile = await Profile.create({ name, email, password });
+    addProfile: async (parent, { name, city, state, email, password }) => {
+      const profile = await Profile.create({ name, city, state, email, password });
       const token = signToken(profile);
       return { token, profile };
     },
@@ -59,7 +59,7 @@ const resolvers = {
       if(!profile) {
         throw new AuthenticationError('No profile was found with that email!');
       }
-      const correctPassword = await profile.isCorrectPAssword(password);
+      const correctPassword = await profile.isCorrectPassword(password);
 
       if(!correctPassword) {
         throw new AuthenticationError("Incorrect Password!");
