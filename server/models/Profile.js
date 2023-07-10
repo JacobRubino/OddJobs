@@ -55,3 +55,6 @@ profileSchema.methods.isCorrectPassword = async function (password) {
 const Profile = model('Profile', profileSchema);
 
 module.exports = Profile;
+
+
+//Sudar: Added state in profileseeds.json because state was missing from there
