@@ -11,11 +11,9 @@ const profileSchema = new Schema(
     },
     skills: {
       type: [String],
-      required: true
     },
     rate: {
       type: Number,
-      required: true
     },
     city: {
       type: String,
