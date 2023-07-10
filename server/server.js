@@ -3,6 +3,7 @@ const { ApolloServer } = require('apollo-server-express');
 const cors = require('cors'); // Add this line
 const path = require('path');
 const { authMiddleware } = require('./utils/auth');
+//Sudar- profile data from models
 const { Profile } = require('./models');
 
 const { typeDefs, resolvers } = require('./schemas');
@@ -34,12 +35,13 @@ app.get('/', (req, res) => {
 });
 
 // Apply the Apollo Server middleware
-async function startServer() {
+const startApolloServer = async () => {
   await server.start();
   server.applyMiddleware({ app });
 }
 
-startServer();
+  // Call the async function to start the server
+  startApolloServer();
 
 // Start the server
 db.once('open', () => {
