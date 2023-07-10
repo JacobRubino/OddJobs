@@ -24,8 +24,8 @@
     "web-vitals": "^2.1.4"
   },
   "engines": {
-    "node": "14.x",
-    "npm": "7.x"
+    "node": "16.x",
+    "npm": "9.x"
   },
   "scripts": {
     "start": "node server/server.js",
