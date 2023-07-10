@@ -4,6 +4,7 @@
     "skills": ["Plumbing", "Electrical"],
     "rate": 70,
     "city": "Providence",
+    "state": "Rhode Island", 
     "location": "RI",
     "email": "briangomez@gmail.com",
     "password": "password02"
@@ -13,6 +14,7 @@
     "skills": ["Help Moving", "TV Mounting", "Packing"],
     "rate": 65,
     "city": "Bronx",
+    "state": "New York",
     "location": "NY",
     "email": "maxjean@gmail.com",
     "password": "password03"
@@ -22,6 +24,7 @@
     "skills": ["Painting", "Cleaning", "Laundry"],
     "rate": 40,
     "city": "Los Angeles",
+    "state": "California",
     "location": "CA",
     "email": "amikobee@gmail.com",
     "password": "password04"
@@ -31,6 +34,7 @@
     "skills": ["Laundry", "Yard Work", "Dog-Walker"],
     "rate": 45,
     "city": "Atlanta",
+    "state": "Georgia",
     "location": "GA",
     "email": "aliciabeck@gmail.com",
     "password": "password05"
@@ -40,6 +44,7 @@
     "skills": ["Snow Removal"],
     "rate": 70,
     "city": "Hartford",
+    "state": "Connecticut",
     "location": "CT",
     "email": "edwardberard@gmail.com",
     "password": "password06"
@@ -49,6 +54,7 @@
     "skills": ["Flooring and Tiling Help", "Painting", "TV Mounting"],
     "rate": 50,
     "city": "Raleigh",
+    "state": "North Carolina",
     "location": "NC",
     "email": "alankay@gmail.com",
     "password": "password07"
@@ -58,6 +64,7 @@
     "skills": ["Plumbing", "Carpentry"],
     "rate": 80,
     "city": "Oakland",
+    "state": "California",
     "location": "CA",
     "email": "langstonwalker@gmail.com",
     "password": "password08"
@@ -67,6 +74,7 @@
     "skills": ["Snow Removal", "Wallpapering"],
     "rate": 75,
     "city": "Brooklyn",
+    "state": "New York",
     "location": "NY",
     "email": "davidthomas@gmail.com",
     "password": "password09"
@@ -76,6 +84,7 @@
     "skills": ["Waiting in Line", "Cooking"],
     "rate": 40,
     "city": "Portland",
+    "state": "Oregon",
     "location": "OR",
     "email": "donaldknuth@gmail.com",
     "password": "password10"
@@ -85,8 +94,11 @@
     "skills": ["Painting", "Laundry", "Dog-Walker"],
     "rate": 38,
     "city": "Queens",
+    "state": "New York",
     "location": "NY",
     "email": "joesas@gmail.com",
     "password": "password11"
   }
 ]
+
+
