@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-
 import { useMutation } from '@apollo/client'
 import { ADD_PROFILE } from '../utils/mutations'
 
+
 import Auth  from '../utils/auth'
+
+
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 
 const Signup = () => {
     const [formState, setFormState] = useState({
@@ -28,6 +32,11 @@ const Signup = () => {
     const handleFormSubmit = async (event) => {
         event.preventDefault()
         console.log(formState)
+
+        if (!emailRegex.test(formState.email)) {
+            console.log('Email validation error: Invalid email');
+            return;
+        }
 
         try {
             const {data} = await addProfile({
@@ -69,23 +78,23 @@ const Signup = () => {
                                 />
                                 <input 
                                     className='from-input'
-                                    placeholdder="Your City"
-                                    name="City"
+                                    placeholder="Your City"
+                                    name="city"
                                     type='text'
                                     value={formState.city}
                                     onChange={handleChange}
                                 />
                                 <input 
                                     className='from-input'
-                                    placeholdder="Your State"
-                                    name="State"
+                                    placeholder="Your State"
+                                    name="state"
                                     type='text'
                                     value={formState.state}
                                     onChange={handleChange}
                                 />
                                 <input 
                                     className='from-input'
-                                    placeholdder="******"
+                                    placeholder="******"
                                     name="password"
                                     type='password'
                                     value={formState.password}

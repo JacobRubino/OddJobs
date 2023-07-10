@@ -1,4 +1,4 @@
-const { Profile } = require('../models');
+const { Profile, Feedback } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
 
@@ -12,12 +12,24 @@ const resolvers = {
       return Profile.findOne({ _id: profileId });
     },
 
+
+    //Sudar- added contractornames to pull them into feedback page
+    contractorNames: async () => {
+      const profiles = await Profile.find();
+      return profiles.map((profile) => profile.name);
+    },
+
+    feedback: async () => {
+      return Feedback.find();
+    },
+  
+
     // come up w/ a name for your function
     // have a query that take a state and or skill
     workers: async (parent, variables) => {
       const location = variables.location;
       const skill = variables.skill;
-      const workers = Profile.find({ location: location, skills: skill })
+      const workers = await Profile.find({ location: location, skills: skill })
       console.log(workers)
       return workers
     }
@@ -26,8 +38,8 @@ const resolvers = {
   },
 
   Mutation: {
-    addProfile: async (parent, { name, email, password }) => {
-      const profile = await Profile.create({ name, email, password });
+    addProfile: async (parent, { name, city, state, email, password }) => {
+      const profile = await Profile.create({ name, city, state, email, password });
       const token = signToken(profile);
       return { token, profile };
     },
@@ -53,20 +65,38 @@ const resolvers = {
         { new: true }
       );
     },
-    login: async (parent, { email, password}) => {
+    login: async (parent, { email, password }) => {
       const profile = await Profile.findOne({ email });
 
-      if(!profile) {
+      if (!profile) {
         throw new AuthenticationError('No profile was found with that email!');
       }
-      const correctPassword = await profile.isCorrectPAssword(password);
+      const correctPassword = await profile.isCorrectPassword(password);
 
-      if(!correctPassword) {
-        throw new AuthenticationError("Incorrect Password!");
+      if (!correctPassword) {
+        throw new AuthenticationError('Incorrect Password!');
       }
-      const token = signToken(profile)
-      return {token, profile}
-    }
+
+      const token = signToken(profile);
+      return { token, profile };
+    },
+
+    //Added addfeedback function so we can save feedback
+    addFeedback: async (parent, { contractorName, starRating, review }) => {
+      try {
+        const newFeedback = new Feedback({
+          contractorName,
+          starRating,
+          review,
+        });
+
+        const savedFeedback = await newFeedback.save();
+        return savedFeedback;
+      } catch (error) {
+        console.error(error); 
+        throw new Error('Failed to add feedback.');
+      }
+    },
   },
 };
 
