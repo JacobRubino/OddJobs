@@ -69,23 +69,23 @@ const Signup = () => {
                                 />
                                 <input 
                                     className='from-input'
-                                    placeholdder="Your City"
-                                    name="City"
+                                    placeholder="Your City"
+                                    name="city"
                                     type='text'
                                     value={formState.city}
                                     onChange={handleChange}
                                 />
                                 <input 
                                     className='from-input'
-                                    placeholdder="Your State"
-                                    name="State"
+                                    placeholder="Your State"
+                                    name="state"
                                     type='text'
                                     value={formState.state}
                                     onChange={handleChange}
                                 />
                                 <input 
                                     className='from-input'
-                                    placeholdder="******"
+                                    placeholder="******"
                                     name="password"
                                     type='password'
                                     value={formState.password}
