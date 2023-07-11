@@ -37,7 +37,7 @@ const client = new ApolloClient({
 const App = () => {
   return (
     <ApolloProvider client={client}>
-      <Router>
+      <Router basename = '/'>
         <div className="app-container">
           <div className="content-container">
             <Navbar />
