@@ -5,6 +5,7 @@ const path = require('path');
 const { authMiddleware } = require('./utils/auth');
 //Sudar- profile data from models
 const { Profile } = require('./models');
+const favicon = require('serve-favicon')
 
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
@@ -14,6 +15,8 @@ const app = express();
 
 const stripe = require('stripe')('')
 app.use(cors()); // Enable CORS
+
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
 const server = new ApolloServer({
   typeDefs,
