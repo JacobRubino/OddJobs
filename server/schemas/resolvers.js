@@ -38,8 +38,8 @@ const resolvers = {
   },
 
   Mutation: {
-    addProfile: async (parent, { name, city, state, email, password }) => {
-      const profile = await Profile.create({ name, city, state, email, password });
+    addProfile: async (parent, { name, city, state, email, password, skills, rate, phone }) => {
+      const profile = await Profile.create({ name, city, state, email, password, skills, rate, phone });
       const token = signToken(profile);
       return { token, profile };
     },

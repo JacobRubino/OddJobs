@@ -1,15 +1,25 @@
 import { gql } from '@apollo/client';
 
 export const ADD_PROFILE = gql`
-  mutation AddProfile($name: String!, $email: String!, $city: String!, $state: String!, $password: String!) {
-    addProfile(name: $name, email: $email, city: $city, state: $state, password: $password) {
-      token
-      profile {
-        _id
-        name
-      }
+mutation AddProfile($name: String!, $email: String!, $city: String!, $state: String!, $password: String!, $skills: [String], $rate: Int, $phone: String) {
+  addProfile(
+    name: $name
+    email: $email
+    city: $city
+    state: $state
+    password: $password
+    skills: $skills
+    rate: $rate
+    phone: $phone
+  ) {
+    token
+    profile {
+      _id
+      name
     }
   }
+}
+
 `;
 
 export const ADD_SKILL = gql`
