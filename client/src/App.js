@@ -13,6 +13,8 @@ import Navbar from './pages/navbar';
 import Footer from './pages/Footer';
 import Signup from './pages/Signup'
 import Login from './pages/Login'
+import AboutMe from './pages/Aboutme'
+import Contact from './pages/Contact'
 import './App';
 
 const httpLink = createHttpLink({
@@ -46,6 +48,8 @@ const App = () => {
               <Route exact path="/Signup" element={<Signup />} />
               <Route exact path="/Login" element={<Login />} />
               <Route path="/feedback" element={<Feedback />} />
+              <Route path="/about" element={<AboutMe />} />
+              <Route path="/contact" element={<Contact />} />
             </Routes>
           </div>
           <Footer />
