@@ -1,5 +1,5 @@
 .feedback-container {
-    background-color: navy;
+    background-color:  #2a607c;
     color: #ffffff;
     height: 100vh;
     display: flex;
@@ -43,7 +43,7 @@
   }
   
   .new-review-form button[type="submit"]:hover {
-    background-color: #286090;
+    background-color: #d9dcd6;
   }
   
   .comment-card {
@@ -123,4 +123,8 @@
 
 .feedback-comments .card-subtitle {
   color: black;
+}
+
+body {
+  background-color: #d9dcd6;
 }

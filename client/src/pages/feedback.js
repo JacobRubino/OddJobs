@@ -102,8 +102,8 @@ const Feedback = () => {
       <div className="feedback-comments-container">
         <h3>Feedback Comments:</h3>
         <div className="feedback-comments-row">
-          {feedback.map((comment) => (
-            <div key={comment._id} className="card comment-card">
+          {feedback.map((comment, index) => (
+            <div key={index} className="card comment-card">
               <div className="card-body">
                 <h5 className="card-title">{comment.contractorName}</h5>
                 <h6 className="card-subtitle mb-2 text-muted">
