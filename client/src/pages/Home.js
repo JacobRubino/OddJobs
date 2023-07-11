@@ -104,15 +104,32 @@ const Home = () => {
       })}
       </div>
       </section>
-      chicken
+
+      <section className='chooseList'>
+      <h1 id='help'>How Can We Lend a Hand To You Today?</h1>
 
       <form onSubmit={handleSubmit}>
-        <select>
-          <option></option>
-          <option>painting</option>
+        <select className='option'>
+          <option placeholder='Job'>Job</option>
+          <option>Carpentry</option>
+          <option>Cleaning</option>
+          <option>Cooking</option>
+          <option>Dog-Walking</option>
+          <option>Electrical</option>
+          <option>Flooring & Tiling Help</option>
+          <option>Help Moving</option>
+          <option>Laundry</option>
+          <option>Painting</option>
+          <option>Packing</option>
+          <option>Plumbing</option>
+          <option>Snow-Removal</option>
+          <option>TV-Mounting</option>
+          <option>Waiting in Line</option>
+          <option>Wallpapering</option>
+          <option>Yard Work</option>
         </select>
-        <select onChange={handleLocationChange}>
-          <option></option>
+        <select className='option' onChange={handleLocationChange}>
+          <option placeholder='State'>State</option>
           <option value="AL">Alabama</option>
           <option value="AK">Alaska</option>
           <option value="AZ">Arizona</option>
@@ -166,8 +183,10 @@ const Home = () => {
           <option value="WI">Wisconsin</option>
           <option value="WY">Wyoming</option>
         </select>
-        <button type="submit">Submit</button>
-      </form>    </div>
+        <button id='submitBtn' type="submit">Submit</button>
+      </form> 
+      </section>
+         </div>
   );
 };
 
