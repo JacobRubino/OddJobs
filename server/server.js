@@ -15,7 +15,7 @@ const app = express();
 
 const stripe = require('stripe')('')
 app.use(cors()); // Enable CORS
-
+  
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
 const server = new ApolloServer({
