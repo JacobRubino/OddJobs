@@ -12,6 +12,7 @@ const db = require('./config/connection');
 const PORT = process.env.PORT || 3007;
 const app = express();
 
+const stripe = require('stripe')('')
 app.use(cors()); // Enable CORS
 
 const server = new ApolloServer({
@@ -32,6 +33,29 @@ if (process.env.NODE_ENV === 'production') {
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
+
+//set a checkout post route for stripe payments
+app.post('/checkout-route', async (req, res) => {
+  const { priceId } = req.body;
+  try {
+    const session = await stripe.checkout.sessions.create({
+      line_items: [
+        {
+          price: priceId,
+          quantity: 1,
+        },
+      ],
+      payment_method_types: ['card'],
+      mode: 'payment',
+      success_url: 'yourpaymenthasbeensuccessful.com',
+      cancel_url: 'transaction canceled.com',
+    });
+
+    res.json({ sessionId: session.id });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
 
 // Apply the Apollo Server middleware

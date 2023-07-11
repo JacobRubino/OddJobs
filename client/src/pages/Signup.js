@@ -51,6 +51,7 @@ const Signup = () => {
         }
 
         const rate = parseInt(formState.rate, 10);
+        console.log(typeof rate);
 
         try {
             const { data } = await addProfile({
