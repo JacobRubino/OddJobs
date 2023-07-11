@@ -4,6 +4,8 @@ import { useMutation } from '@apollo/client'
 import { ADD_PROFILE } from '../utils/mutations'
 
 
+
+import "./signup.css"
 import Auth from '../utils/auth'
 
 
@@ -77,7 +79,7 @@ const Signup = () => {
                                 <Link to="/">OddJobs</Link>
                             </p>
                         ) : (
-                            <form onSubmit={handleFormSubmit}>
+                            <form className="signupform" onSubmit={handleFormSubmit}>
                                 <input
                                     className="form-input"
                                     placeholder="Your Name"
@@ -87,7 +89,7 @@ const Signup = () => {
                                     onChange={handleChange}
                                 />
                                 <input
-                                    className='from-input'
+                                    className='form-input'
                                     placeholder="Your Email"
                                     name='email'
                                     type='email'
@@ -95,7 +97,7 @@ const Signup = () => {
                                     onChange={handleChange}
                                 />
                                 <input
-                                    className='from-input'
+                                    className='form-input'
                                     placeholder="Your City"
                                     name="city"
                                     type='text'
@@ -103,7 +105,7 @@ const Signup = () => {
                                     onChange={handleChange}
                                 />
                                 <input
-                                    className='from-input'
+                                    className='form-input'
                                     placeholder="Your State"
                                     name="state"
                                     type='text'
@@ -143,7 +145,7 @@ const Signup = () => {
                                     onChange={handleChange}
                                 />
                                 <button
-                                    className='btn btn-block btn-info'
+                                    className="submitbtn btn btn-block btn-info"
                                     style={{ cursor: 'pointer' }}
                                     type='submit'
                                 >
