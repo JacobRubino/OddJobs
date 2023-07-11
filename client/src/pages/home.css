@@ -110,3 +110,6 @@
   text-shadow: none;
 }
 
+.option:hover {
+  background-color:#716e6e;;
+}
