@@ -106,7 +106,7 @@ const Home = () => {
       </section>
 
       <section className='chooseList'>
-      <h1 id='help'>What Do You Need Help With Today?</h1>
+      <h1 id='help'>How Can We Lend a Hand To You Today?</h1>
 
       <form onSubmit={handleSubmit}>
         <select className='option'>
