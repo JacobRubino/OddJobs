@@ -54,3 +54,38 @@
   border-radius: 10px;
   color: rgb(213, 214, 223);
 }
+
+.chooseList {
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  padding-bottom: 200px;
+  margin-top: -130px;
+  border: none;
+}
+
+#help {
+  font-size: 45px;
+  font-family: "Segoe UI", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sel {
+  width: 350px;
+  cursor: pointer;
+}
+
+.option {
+  font-size: 20px;
+  border-radius: 20px;
+  background: #747272;
+  color:white;
+  border-color: black;
+  width: 300px;
+  font-family: "Segoie UI", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.submitBtn {
+  font-size: 20px;
+  border-radius: 20px;
+}
+

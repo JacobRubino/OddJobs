@@ -104,11 +104,13 @@ const Home = () => {
       })}
       </div>
       </section>
-      <h1>What Do You Need Help With Today?</h1>
+
+      <section className='chooseList'>
+      <h1 id='help'>What Do You Need Help With Today?</h1>
 
       <form onSubmit={handleSubmit}>
-        <select>
-          <option></option>
+        <select className='option'>
+          <option placeholder='Job'>Job</option>
           <option>Carpentry</option>
           <option>Cleaning</option>
           <option>Cooking</option>
@@ -126,8 +128,8 @@ const Home = () => {
           <option>Wallpapering</option>
           <option>Yard Work</option>
         </select>
-        <select onChange={handleLocationChange}>
-          <option></option>
+        <select className='option' onChange={handleLocationChange}>
+          <option placeholder='State'>State</option>
           <option value="AL">Alabama</option>
           <option value="AK">Alaska</option>
           <option value="AZ">Arizona</option>
@@ -181,8 +183,10 @@ const Home = () => {
           <option value="WI">Wisconsin</option>
           <option value="WY">Wyoming</option>
         </select>
-        <button type="submit">Submit</button>
-      </form>    </div>
+        <button id='submitBtn' type="submit">Submit</button>
+      </form> 
+      </section>
+         </div>
   );
 };
 
