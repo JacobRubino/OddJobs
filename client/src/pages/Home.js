@@ -10,7 +10,7 @@ const Home = () => {
   
   const [current, setCurrent] = useState(0);
  // const [skills, setSkills] = useState('');
- const [location, setLocation] = useState('');
+  const [location, setLocation] = useState('');
 
   const length = SliderData.length;
 
@@ -184,7 +184,7 @@ const Home = () => {
           <option value="WY">Wyoming</option>
         </select>
         <button id='submitBtn' type="submit">Submit</button>
-      </form> 
+      </form>    
       </section>
     </div>
   );
