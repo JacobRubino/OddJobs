@@ -54,7 +54,7 @@ const Login = (props) => {
                                 <Link to="/">Welcome to OddJobs.</Link>
                             </p>
                         ) : (
-                            <form onSubmit={handleFormSubmit}>
+                            <form className='loginForm' onSubmit={handleFormSubmit}>
                                 <input
                                     className="form-input"
                                     placeholder="Your email"
@@ -72,7 +72,7 @@ const Login = (props) => {
                                     onChange={handleChange}
                                 />
                                 <button
-                                    className="btn btn-block btn-info"
+                                    className="submitbtn btn btn-block btn-info"
                                     style={{ cursor: 'pointer' }}
                                     type="submit"
                                 >

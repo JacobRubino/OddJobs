@@ -5,12 +5,13 @@ const typeDefs = gql`
     _id: ID
     name: String
     skills: [String]!
-    location: String
+    state: String
+    city: String
     email: String
     password: String
-    state: String # Add the "state" field here
+    phone: String
   }
-
+  
   
   type Feedback {
     _id: ID
@@ -27,7 +28,7 @@ const typeDefs = gql`
   type Query {
     profiles: [Profile]!
     profile(profileId: ID!): Profile
-    workers(location: String, skill: String): [Profile]
+    name(state: String, skill: String): [Profile]
     contractorNames: [String]!
     feedback: [Feedback]! # Add the feedback query
   }

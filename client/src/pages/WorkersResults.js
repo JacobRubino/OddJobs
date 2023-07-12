@@ -4,18 +4,20 @@ import { FaArrowAltCircleRight } from 'react-icons/fa';
 import { FaArrowAltCircleLeft } from 'react-icons/fa';
 
 //placeholder for where we will get the worker list from, 
-let WorkerData = 15
+const WorkerData = [];
+
 const WorkersResults = () => {
-  const [Worker, setWorker] = useState(0)
+  const [Worker, setWorker] = useState(0);
   const length = WorkerData.length;
-  const NextWorkers = () => {
-    setWorker(Worker === length - 1 ? 0 : Worker + 8);
+
+  const nextWorkers = () => {
+    setWorker(Worker === length - 8 ? 0 : Worker + 8);
   };
 
   const prevWorkers = () => {
-    setWorker(Worker === 0 ? length - 1 : Worker - 8);
+    setWorker(Worker === 0 ? length - 8 : Worker - 8);
   };
-  
+
   return (
     <div>
       <div className='heading'>
@@ -24,9 +26,10 @@ const WorkersResults = () => {
       <div>
       <WorkerList renderFrom={Worker} />
       <FaArrowAltCircleLeft className='arrow-left' onClick={prevWorkers} />
-      <FaArrowAltCircleRight className='arrow-right' onClick={NextWorkers} />
+      <FaArrowAltCircleRight className='arrow-right' onClick={nextWorkers} />
     </div>
     </div>
   )
 
 }
+export default WorkersResults;

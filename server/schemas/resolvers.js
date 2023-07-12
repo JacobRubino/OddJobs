@@ -26,12 +26,11 @@ const resolvers = {
 
     // come up w/ a name for your function
     // have a query that take a state and or skill
-    workers: async (parent, variables) => {
-      const location = variables.location;
-      const skill = variables.skill;
-      const workers = await Profile.find({ location: location, skills: skill })
-      console.log(workers)
-      return workers
+    name: async (parent, variables, context) => {
+      const location = variables.state;
+      const name = await Profile.find({ state: location })
+      console.log('bananas');
+      return name;
     }
     // that query uses the find op to get all the users that match that critera
     // send the result back

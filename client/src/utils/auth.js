@@ -1,6 +1,6 @@
 import decode from 'jwt-decode'
 
-export default class Authenticate {
+class Authenticate {
     getProfile() {
         return decode(this.getToken())
     }
@@ -20,3 +20,6 @@ export default class Authenticate {
         window.location.reload()
     }
 }
+
+const authInstance = new Authenticate();
+export default authInstance;
