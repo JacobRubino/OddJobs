@@ -16,6 +16,8 @@ const typeDefs = gql`
   type Feedback {
     _id: ID
     contractorName: String
+    dateOfService: String
+    userName: String
     starRating: Int
     review: String
   }
@@ -30,7 +32,7 @@ const typeDefs = gql`
     profile(profileId: ID!): Profile
     name(state: String, skill: String): [Profile]
     contractorNames: [String]!
-    feedback: [Feedback]! # Add the feedback query
+    feedback: [Feedback]! 
   }
 
   type Mutation {
@@ -48,8 +50,15 @@ const typeDefs = gql`
     removeProfile(profileId: ID!): Profile
     removeSkill(profileId: ID!, skill: String!): Profile
     login(email: String!, password: String!): Auth
-    addFeedback(contractorName: String!, starRating: Int!, review: String!): Feedback! # Add the addFeedback mutation
+    addFeedback(
+      contractorName: String!
+      dateOfService: String!
+      userName: String!
+      starRating: Int!
+      review: String!
+    ): Feedback!
   }
+  
 `;
 
 module.exports = typeDefs;

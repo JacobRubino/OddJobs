@@ -26,12 +26,14 @@ const resolvers = {
 
     // come up w/ a name for your function
     // have a query that take a state and or skill
-    name: async (parent, variables, context) => {
-      const location = variables.state;
-      const name = await Profile.find({ state: location })
-      console.log('bananas');
-      return name;
+    name: async (parent, variables) => {
+      // console.log(variables)
+      const state = variables.state;
+      const workers = await Profile.find({ state });
+       console.log(workers);
+      return workers;
     }
+  
     // that query uses the find op to get all the users that match that critera
     // send the result back
   },
@@ -81,18 +83,20 @@ const resolvers = {
     },
 
     //Added addfeedback function so we can save feedback
-    addFeedback: async (parent, { contractorName, starRating, review }) => {
+    addFeedback: async (parent, { contractorName, starRating, review, dateOfService, userName }) => {
       try {
         const newFeedback = new Feedback({
           contractorName,
           starRating,
           review,
+          dateOfService,
+          userName,
         });
 
         const savedFeedback = await newFeedback.save();
         return savedFeedback;
       } catch (error) {
-        console.error(error); 
+        console.error(error);
         throw new Error('Failed to add feedback.');
       }
     },
