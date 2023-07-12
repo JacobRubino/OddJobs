@@ -11,8 +11,10 @@ import './home.css';
 const Home = () => {
   
   const [current, setCurrent] = useState(0);
+
   const [location, setLocation] = useState('');
   const navigate = useNavigate();
+
 
   const length = SliderData.length;
 
@@ -126,10 +128,12 @@ const Home = () => {
   ))}
         </select>
         <button id='submitBtn' type="submit">Submit</button>
-      </form> 
+      </form>    
       </section>
+
       </div>
          </div>
+
   );
 };
 

@@ -15,6 +15,17 @@ export const ADD_PROFILE = gql`
   }
 `;
 
+export const GET_WORKERS = gql`
+  name(state: $state) {
+    _id
+    name
+    skills
+    email
+    state
+    phone
+    }
+  }
+`
 export const ADD_SKILL = gql`
   mutation AddSkill($profileId: ID!, $skill: String!) {
     addSkill(profileId: $profileId, skill: $skill) {
