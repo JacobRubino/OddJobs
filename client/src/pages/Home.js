@@ -65,6 +65,23 @@ const Home = () => {
 
   return (
     <div>
+      <div>
+        <section className='chooseList'>
+        <h1 id='help'>How Can We Lend a Hand To You Today?</h1>
+
+          <form onSubmit={handleSubmit}>
+            <select className='option' onChange={handleLocationChange}>
+            {States.map((state) => (
+              <option key={state.abbreviation} value={state.abbreviation}> 
+                {state.name}
+              </option>
+            ))}
+            </select>
+            <button id='submitBtn' type="submit">Submit</button>
+          </form>    
+        </section>
+
+      </div>
       <section className='slider'>
         <FaArrowAltCircleLeft className='arrow-left' onClick={prevSlide} />
         <FaArrowAltCircleRight className='arrow-right' onClick={nextSlide} />
@@ -114,25 +131,8 @@ const Home = () => {
       </div>
       </section>
 
-   <div>
-      <section className='chooseList'>
-      <h1 id='help'>How Can We Lend a Hand To You Today?</h1>
-
-      <form onSubmit={handleSubmit}>
-        <select className='option' onChange={handleLocationChange}>
-        {States.map((state) => (
-    <option key={state.abbreviation} value={state.abbreviation}> 
-{state.name}
-
-    </option>
-  ))}
-        </select>
-        <button id='submitBtn' type="submit">Submit</button>
-      </form>    
-      </section>
-
-      </div>
-         </div>
+    
+    </div>
 
   );
 };
