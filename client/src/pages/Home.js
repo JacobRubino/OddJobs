@@ -186,7 +186,7 @@ const Home = () => {
         <button id='submitBtn' type="submit">Submit</button>
       </form> 
       </section>
-         </div>
+    </div>
   );
 };
 
