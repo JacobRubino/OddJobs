@@ -15,6 +15,7 @@ import Signup from './pages/Signup'
 import Login from './pages/Login'
 import AboutMe from './pages/Aboutme'
 import Contact from './pages/Contact'
+import WorkersResults from './pages/WorkersResults';
 import './App';
 
 const httpLink = createHttpLink({
@@ -50,6 +51,7 @@ const App = () => {
               <Route path="/feedback" element={<Feedback />} />
               <Route path="/about" element={<AboutMe />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/workers-results" element={<WorkersResults />} />
             </Routes>
           </div>
           <Footer />
