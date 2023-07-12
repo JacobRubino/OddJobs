@@ -4,18 +4,18 @@ import { useQuery, gql } from '@apollo/client'
 
 function WorkerList(props, renderFrom) {
   const [currentIndex, setCurrentIndex] = useState(renderFrom)
-  const locationSearch = 'detroit' //placeholder for getting the search result
-  const skillSearch = 'painting' //placeholder for getting the search result
+  const locationSearch = 'New York' //placeholder for getting the search result
 
   const WORKER_QUERY = gql`
     query {
-      workers(location: "${locationSearch}", skill: "${skillSearch}"){
+      workers(location: "${locationSearch}"){
         _id
         name
         skills
         location
         email
         state
+        phone
       }
   `
   const { loading, error, data } = useQuery(WORKER_QUERY);
@@ -29,8 +29,9 @@ function WorkerList(props, renderFrom) {
       {workers.map(workers => {
         <Card>
         <h1>{workers.name}</h1>
-        <p>Works as a:{workers.job}</p>
+        <p>Works as a:{workers.skills}</p>
         <h2>About {workers.name}</h2>
+        <p>lives in: {workers.location}</p>
         <p>{workers.description}</p>
       </Card>   
       })}
