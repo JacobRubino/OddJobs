@@ -106,7 +106,6 @@ const Home = () => {
       </section>
 
       <section className='chooseList'>
-      <div className="chooseListContent">
       <h1 id='help'>How Can We Lend a Hand To You Today?</h1>
 
       <form onSubmit={handleSubmit}>
@@ -130,7 +129,7 @@ const Home = () => {
           <option>Yard Work</option>
         </select>
         <select className='option' onChange={handleLocationChange}>
-          <option value="" placeholder='State'>State</option>
+          <option placeholder='State'>State</option>
           <option value="AL">Alabama</option>
           <option value="AK">Alaska</option>
           <option value="AZ">Arizona</option>

@@ -8,6 +8,14 @@ const feedbackSchema = new Schema(
       type: String,
       required: true,
     },
+    dateOfService: {
+      type: String,
+      required: true,
+    },
+    userName: {
+      type: String,
+      required: true,
+    },
     starRating: {
       type: Number,
       required: true,
@@ -21,6 +29,7 @@ const feedbackSchema = new Schema(
     timestamps: true,
   }
 );
+
 
 const Feedback = mongoose.model('Feedback', feedbackSchema);
 
