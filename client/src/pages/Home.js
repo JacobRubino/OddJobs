@@ -40,26 +40,40 @@ const Home = () => {
   };
   return (
     <div>
-      <section className='slider'>
-        <FaArrowAltCircleLeft className='arrow-left' onClick={prevSlide} />
-        <FaArrowAltCircleRight className='arrow-right' onClick={nextSlide} />
-        {SliderData?.map((slide, index) => {
-          return (    
-            <div
-              className={index === current ? 'slide active' : 'slide'}
-              key={index}
-            >
-              {index === current && (
-                <div>
-                  <img src={slide.image} alt='travel image' className='image' />
-                </div>
-              )}
-            </div>
-          );
-        })}
-        <div className='textBox'>
-        {SliderTextData?.map((text, index) => {
-          return (    
+      <div>
+        <section className="chooseList">
+          <h1 id="help">How Can We Lend a Hand To You Today?</h1>
+          <form onSubmit={handleSubmit}>
+            <select className="option" onChange={handleLocationChange}>
+              {States.map((state) => (
+                <option key={state.abbreviation} value={state.name}>
+                  {state.name}
+                </option>
+              ))}
+            </select>
+            <button id="submitBtn" type="submit">
+              Submit
+            </button>
+          </form>
+        </section>
+      </div>
+      <section className="slider">
+        <FaArrowAltCircleLeft className="arrow-left" onClick={prevSlide} />
+        <FaArrowAltCircleRight className="arrow-right" onClick={nextSlide} />
+        {SliderData?.map((slide, index) => (
+          <div
+            className={index === current ? 'slide active' : 'slide'}
+            key={index}
+          >
+            {index === current && (
+              <div>
+                <img src={slide.image} alt="travel" className="image" />
+              </div>
+            )}
+          </div>
+        ))}
+        <div className="textBox">
+          {SliderTextData?.map((text, index) => (
             <div
               className={index === current ? 'text active' : 'text'}
               key={index}
@@ -86,27 +100,7 @@ const Home = () => {
         </div>
         
       </section>
-
-   <div>
-      <section className='chooseList'>
-      <h1 id='help'>How Can We Lend a Hand To You Today?</h1>
-
-      <form onSubmit={handleSubmit}>
-        <select className='option' onChange={handleLocationChange}>
-        {States.map((state) => (
-    <option key={state.abbreviation} value={state.abbreviation}> 
-{state.name}
-
-    </option>
-  ))}
-        </select>
-        <button id='submitBtn' type="submit">Submit</button>
-      </form>    
-      </section>
-
-      </div>
-         </div>
-
+    </div>
   );
 };
 
