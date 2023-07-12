@@ -1,41 +1,27 @@
-import React, {useState} from "react";
-import { Card } from 'react-bootstrap'
-import { useQuery, gql } from '@apollo/client'
-
-function WorkerList(props, renderFrom) {
-  const [currentIndex, setCurrentIndex] = useState(renderFrom)
-  const locationSearch = 'New York' //placeholder for getting the search result
-
-  const WORKER_QUERY = gql`
-    query {
-      workers(location: "${locationSearch}"){
-        _id
-        name
-        skills
-        location
-        email
-        state
-        phone
-      }
-  `
-  const { loading, error, data } = useQuery(WORKER_QUERY);
-
-  if (loading) return <p>...Loading</p>;
-  if (error) return <Card>Error: {error.message} </Card>
-
-  const workers = data.workers.slice(currentIndex, currentIndex + 8)
+import React from 'react';
+import { Card } from 'react-bootstrap';
+import { useQuery } from '@apollo/client';
+import { GET_WORKERS } from '../utils/queries';
+const WorkerList = () => {
+  const { loading, error, data } = useQuery(GET_WORKERS, {
+    variables: { state: 'New York' },
+  });
+  if (loading) return <p>Loading...</p>;
+  if (error) return <Card>Error: {error.message}</Card>;
+  const workers = data.name; // Assuming `name` is the field name in your query
   return (
     <div>
-      {workers.map(workers => {
-        <Card>
-        <h1>{workers.name}</h1>
-        <p>Works as a:{workers.skills}</p>
-        <h2>About {workers.name}</h2>
-        <p>lives in: {workers.location}</p>
-        <p>{workers.description}</p>
-      </Card>   
-      })}
+      {workers.map(worker => (
+        <Card key={worker._id}>
+          <h1>{worker.name}</h1>
+          <p>Works as a: {worker.skills}</p>
+          <h2>About {worker.name}</h2>
+          <p>Lives in: {worker.state}</p>
+          <p>Email: {worker.email}</p>
+          <p>Phone: {worker.phone}</p>
+        </Card>
+      ))}
     </div>
-  )
-}
-export default WorkerList
+  );
+};
+export default WorkerList;
