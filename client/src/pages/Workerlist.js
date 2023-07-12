@@ -2,17 +2,13 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 import { useQuery } from '@apollo/client';
 import { GET_WORKERS } from '../utils/queries';
-
 const WorkerList = () => {
   const { loading, error, data } = useQuery(GET_WORKERS, {
     variables: { state: 'New York' },
   });
-
   if (loading) return <p>Loading...</p>;
   if (error) return <Card>Error: {error.message}</Card>;
-
   const workers = data.name; // Assuming `name` is the field name in your query
-
   return (
     <div>
       {workers.map(worker => (
@@ -28,5 +24,4 @@ const WorkerList = () => {
     </div>
   );
 };
-
 export default WorkerList;

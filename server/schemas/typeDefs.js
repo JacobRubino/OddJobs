@@ -32,7 +32,8 @@ const typeDefs = gql`
     profile(profileId: ID!): Profile
     name(state: String): [Profile]
     contractorNames: [String]!
-    feedback: [Feedback]! 
+    feedback: [Feedback]!
+
   }
 
   type Mutation {

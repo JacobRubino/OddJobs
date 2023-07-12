@@ -39,10 +39,6 @@ const resolvers = {
         throw new Error('Failed to retrieve profiles.');
       }
     }
-    
-  
-    // that query uses the find op to get all the users that match that critera
-    // send the result back
   },
 
   Mutation: {
