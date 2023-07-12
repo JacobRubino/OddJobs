@@ -3,14 +3,18 @@ import SliderData from '../components/SliderData';
 import { SliderTextData, SliderTextDescription} from '../components/TextData';
 import { FaArrowAltCircleRight } from 'react-icons/fa';
 import { FaArrowAltCircleLeft } from 'react-icons/fa';
+import States from '../components/states'
+import { useNavigate} from 'react-router-dom'
 
 import './home.css';
 
 const Home = () => {
   
   const [current, setCurrent] = useState(0);
- // const [skills, setSkills] = useState('');
+
   const [location, setLocation] = useState('');
+  const navigate = useNavigate();
+
 
   const length = SliderData.length;
 
@@ -38,7 +42,11 @@ const Home = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('this is working')
+    console.log('this is working');
+
+    navigate({
+      pathname:"/workers-results" //localhost:3000/workers-results ... use REAL url page 
+    })
     // get the users choices from the state variables
     // navigate to a results page
     // pass your location and skills as param
@@ -52,6 +60,7 @@ const Home = () => {
     console.log(e.target.value)
     // update the state variable
     setLocation(e.target.value)
+
   }
 
   return (
@@ -105,88 +114,26 @@ const Home = () => {
       </div>
       </section>
 
+   <div>
       <section className='chooseList'>
       <h1 id='help'>How Can We Lend a Hand To You Today?</h1>
 
       <form onSubmit={handleSubmit}>
-        <select className='option'>
-          <option placeholder='Job'>Job</option>
-          <option>Carpentry</option>
-          <option>Cleaning</option>
-          <option>Cooking</option>
-          <option>Dog-Walking</option>
-          <option>Electrical</option>
-          <option>Flooring & Tiling Help</option>
-          <option>Help Moving</option>
-          <option>Laundry</option>
-          <option>Painting</option>
-          <option>Packing</option>
-          <option>Plumbing</option>
-          <option>Snow-Removal</option>
-          <option>TV-Mounting</option>
-          <option>Waiting in Line</option>
-          <option>Wallpapering</option>
-          <option>Yard Work</option>
-        </select>
         <select className='option' onChange={handleLocationChange}>
-          <option placeholder='State'>State</option>
-          <option value="AL">Alabama</option>
-          <option value="AK">Alaska</option>
-          <option value="AZ">Arizona</option>
-          <option value="AR">Arkansas</option>
-          <option value="CA">California</option>
-          <option value="CO">Colorado</option>
-          <option value="CT">Connecticut</option>
-          <option value="CO">Colorado</option>
-          <option value="CT">Connecticut</option>
-          <option value="DE">Delaware</option>
-          <option value="FL">Florida</option>
-          <option value="GA">Georgia</option>
-          <option value="HA">Hawaii</option>
-          <option value="ID">Idaho</option>
-          <option value="IL">Illinois</option>
-          <option value="IN">Indiana</option>
-          <option value="IA">Iowa</option>
-          <option value="KS">Kansas</option>
-          <option value="KY">Kentucky</option>
-          <option value="LA">Louisiana</option>
-          <option value="ME">Maine</option>
-          <option value="MD">Maryland</option>
-          <option value="MA">Massachusetts</option>
-          <option value="MI">Michigan</option>
-          <option value="MN">Minnesota</option>
-          <option value="MS">Mississippi</option>
-          <option value="MO">Missouri</option>
-          <option value="MT">Montana</option>
-          <option value="NE">Nebraska</option>
-          <option value="NV">Nevada</option>
-          <option value="NH">New Hampshire</option>
-          <option value="NJ">New Jersey</option>
-          <option value="NM">New Mexico</option>
-          <option value="NY">New York</option>
-          <option value="NC">North Carolina</option>
-          <option value="ND">North Dakota</option>
-          <option value="OH">Ohio</option>
-          <option value="OK">Oklahoma</option>
-          <option value="OR">Oregon</option>
-          <option value="PA">Pennsylvania</option>
-          <option value="RI">Rhode Island</option>
-          <option value="SC">South Carolina</option>
-          <option value="SD">South Dakota</option>
-          <option value="TN">Tennessee</option>
-          <option value="TX">Texas</option>
-          <option value="UT">Utah</option>
-          <option value="VT">Vermont</option>
-          <option value="VA">Virginia</option>
-          <option value="WA">Washington</option>
-          <option value="WV">West Viriginia</option>
-          <option value="WI">Wisconsin</option>
-          <option value="WY">Wyoming</option>
+        {States.map((state) => (
+    <option key={state.abbreviation} value={state.abbreviation}> 
+{state.name}
+
+    </option>
+  ))}
         </select>
         <button id='submitBtn' type="submit">Submit</button>
       </form>    
       </section>
-    </div>
+
+      </div>
+         </div>
+
   );
 };
 

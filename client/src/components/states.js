@@ -1,4 +1,4 @@
-[
+const States = [
     { "name": "Alabama", "abbreviation": "AL" },
     { "name": "Alaska", "abbreviation": "AK" },
     { "name": "Arizona", "abbreviation": "AZ" },
@@ -49,5 +49,6 @@
     { "name": "West Virginia", "abbreviation": "WV" },
     { "name": "Wisconsin", "abbreviation": "WI" },
     { "name": "Wyoming", "abbreviation": "WY" }
-  ]
-  
+  ];
+
+  export default States;
