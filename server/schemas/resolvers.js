@@ -26,6 +26,7 @@ const resolvers = {
 
     // come up w/ a name for your function
     // have a query that take a state and or skill
+
     name: async (_, { state }) => {
       try {
         let query = {};
@@ -39,6 +40,7 @@ const resolvers = {
         throw new Error('Failed to retrieve profiles.');
       }
     }
+
   },
 
   Mutation: {
@@ -86,18 +88,20 @@ const resolvers = {
     },
 
     //Added addfeedback function so we can save feedback
-    addFeedback: async (parent, { contractorName, starRating, review }) => {
+    addFeedback: async (parent, { contractorName, starRating, review, dateOfService, userName }) => {
       try {
         const newFeedback = new Feedback({
           contractorName,
           starRating,
           review,
+          dateOfService,
+          userName,
         });
 
         const savedFeedback = await newFeedback.save();
         return savedFeedback;
       } catch (error) {
-        console.error(error); 
+        console.error(error);
         throw new Error('Failed to add feedback.');
       }
     },
