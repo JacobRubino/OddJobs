@@ -5,16 +5,19 @@ const typeDefs = gql`
     _id: ID
     name: String
     skills: [String]!
-    location: String
+    state: String
+    city: String
     email: String
     password: String
-    state: String # Add the "state" field here
+    phone: String
   }
-
+  
   
   type Feedback {
     _id: ID
     contractorName: String
+    dateOfService: String
+    userName: String
     starRating: Int
     review: String
   }
@@ -27,9 +30,10 @@ const typeDefs = gql`
   type Query {
     profiles: [Profile]!
     profile(profileId: ID!): Profile
-    workers(location: String, skill: String): [Profile]
+    name(state: String): [Profile]
     contractorNames: [String]!
-    feedback: [Feedback]! # Add the feedback query
+    feedback: [Feedback]!
+
   }
 
   type Mutation {
@@ -47,8 +51,15 @@ const typeDefs = gql`
     removeProfile(profileId: ID!): Profile
     removeSkill(profileId: ID!, skill: String!): Profile
     login(email: String!, password: String!): Auth
-    addFeedback(contractorName: String!, starRating: Int!, review: String!): Feedback! # Add the addFeedback mutation
+    addFeedback(
+      contractorName: String!
+      dateOfService: String!
+      userName: String!
+      starRating: Int!
+      review: String!
+    ): Feedback!
   }
+  
 `;
 
 module.exports = typeDefs;

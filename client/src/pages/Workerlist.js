@@ -1,19 +1,27 @@
-import React, {useState} from "react";
-import { Card } from 'react-bootstrap'
-
-function WorkerList(props, renderFrom) {
-  const [currentIndex, setCurrentIndex] = useState(renderFrom)
-  for (let i = 0; i < 8; i++)  {
-    const nextIndex = currentIndex + 1
-    setCurrentIndex(nextIndex)
-    const element = props[currentIndex];
-    return (     
-      <Card>
-        <h1>{element.name}</h1>
-        <p>Works as a:{element.job}</p>
-        <h2>About {element.name}</h2>
-        <p>{element.description}</p>
-      </Card>     
-   )} 
-}
-export default WorkerList
+import React from 'react';
+import { Card } from 'react-bootstrap';
+import { useQuery } from '@apollo/client';
+import { GET_WORKERS } from '../utils/queries';
+const WorkerList = () => {
+  const { loading, error, data } = useQuery(GET_WORKERS, {
+    variables: { state: 'New York' },
+  });
+  if (loading) return <p>Loading...</p>;
+  if (error) return <Card>Error: {error.message}</Card>;
+  const workers = data.name; // Assuming `name` is the field name in your query
+  return (
+    <div>
+      {workers.map(worker => (
+        <Card key={worker._id}>
+          <h1>{worker.name}</h1>
+          <p>Works as a: {worker.skills}</p>
+          <h2>About {worker.name}</h2>
+          <p>Lives in: {worker.state}</p>
+          <p>Email: {worker.email}</p>
+          <p>Phone: {worker.phone}</p>
+        </Card>
+      ))}
+    </div>
+  );
+};
+export default WorkerList;
