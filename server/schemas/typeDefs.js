@@ -30,9 +30,10 @@ const typeDefs = gql`
   type Query {
     profiles: [Profile]!
     profile(profileId: ID!): Profile
-    name(state: String, skill: String): [Profile]
+    name(state: String): [Profile]
     contractorNames: [String]!
-    feedback: [Feedback]! 
+    feedback: [Feedback]!
+
   }
 
   type Mutation {
