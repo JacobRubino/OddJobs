@@ -26,16 +26,21 @@ const resolvers = {
 
     // come up w/ a name for your function
     // have a query that take a state and or skill
-    name: async (parent, variables) => {
-      // console.log(variables)
-      const state = variables.state;
-      const workers = await Profile.find({ state });
-       console.log(workers);
-      return workers;
+
+    name: async (_, { state }) => {
+      try {
+        let query = {};
+        if (state) {
+          query.state = state;
+        }
+        const workers = await Profile.find(query);
+        return workers;
+      } catch (error) {
+        console.error(error);
+        throw new Error('Failed to retrieve profiles.');
+      }
     }
-  
-    // that query uses the find op to get all the users that match that critera
-    // send the result back
+
   },
 
   Mutation: {
