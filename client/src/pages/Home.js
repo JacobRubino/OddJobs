@@ -4,13 +4,15 @@ import { SliderTextData, SliderTextDescription} from '../components/TextData';
 import { FaArrowAltCircleRight } from 'react-icons/fa';
 import { FaArrowAltCircleLeft } from 'react-icons/fa';
 import States from '../components/states'
+import { useNavigate} from 'react-router-dom'
 
 import './home.css';
 
 const Home = () => {
   
   const [current, setCurrent] = useState(0);
- const [location, setLocation] = useState('');
+  const [location, setLocation] = useState('');
+  const navigate = useNavigate();
 
   const length = SliderData.length;
 
@@ -38,7 +40,11 @@ const Home = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('this is working')
+    console.log('this is working');
+
+    navigate({
+      pathname:"/workers-results" //localhost:3000/workers-results ... use REAL url page 
+    })
     // get the users choices from the state variables
     // navigate to a results page
     // pass your location and skills as param
@@ -52,6 +58,7 @@ const Home = () => {
     console.log(e.target.value)
     // update the state variable
     setLocation(e.target.value)
+
   }
 
   return (
@@ -117,11 +124,6 @@ const Home = () => {
 
     </option>
   ))}
-          
-          {/* {States.map((name, index) => (
-            <option key={index}>{States.name}</option>
-          )   
-          )} */}
         </select>
         <button id='submitBtn' type="submit">Submit</button>
       </form> 
