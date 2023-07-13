@@ -45,7 +45,8 @@ const Home = () => {
           <h1 id="help">How Can We Lend a Hand To You Today?</h1>
           <form onSubmit={handleSubmit}>
             <select className="option" onChange={handleLocationChange}>
-              {States.map((state) => (
+            <option value="">Select a state</option>
+              {States.slice(1).map((state) => (
                 <option key={state.abbreviation} value={state.name}>
                   {state.name}
                 </option>
