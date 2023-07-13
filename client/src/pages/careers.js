@@ -14,7 +14,7 @@ const Careers = () => {
       </div>
       <btn className="btn-signup">
       <Link to={'/signup'}>
-        Sign Up now
+        Sign Up Now
         </Link>
         </btn>
     </div>

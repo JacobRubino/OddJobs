@@ -5,6 +5,8 @@
   border-radius: 8px;
   padding: 20px 20px;
   text-align: center;
+  background-color:  #2a607c;
+  color: white;
 }
 .btn-signup {
   background-color: rgb(10, 10, 10);
