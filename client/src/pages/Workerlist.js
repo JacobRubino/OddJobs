@@ -3,6 +3,8 @@ import { Card } from 'react-bootstrap';
 import { useQuery } from '@apollo/client';
 import { GET_WORKERS } from '../utils/queries';
 import './workerlist.css';
+import image5 from '../images/workerlistimage.jpg';
+
 
 const WorkerList = ({ state }) => {
   const { loading, error, data: workerData } = useQuery(GET_WORKERS, {
@@ -52,6 +54,11 @@ const WorkerList = ({ state }) => {
               </span>
             </p>
           </div>
+          <img
+            src={ image5}
+            alt="Thumbnail"
+            className="thumbnailImage"
+          />
         </Card>
       ))}
     </div>
