@@ -1,18 +1,25 @@
 import React from 'react';
 import './footer.css'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
     <div className='footerContainer'>
       <div className='footerElements'>
         <div className='footerContent'>
-          Careers
+          <Link to={'/careers'}>
+            Careers
+          </Link>
         </div>
         <div className='footerContent'>
-          Contributers
+          <Link to={'/contributors'}>
+            Contributers
+          </Link>
         </div>
         <div className='footerContent'>
-          Special Thanks
+          <Link to={'/specialthanks'}>
+            Special Thanks
+          </Link>
         </div>
       </div>
     </div>

@@ -17,6 +17,7 @@ import AboutMe from './pages/Aboutme'
 import Contact from './pages/Contact'
 import WorkersResults from './pages/WorkersResults';
 import './App';
+import Careers from './pages/careers';
 
 const httpLink = createHttpLink({
   uri: '/graphql'
@@ -52,6 +53,7 @@ const App = () => {
               <Route path="/about" element={<AboutMe />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/workers-results" element={<WorkersResults />} />
+              <Route path="/careers" element={<Careers />} />
             </Routes>
           </div>
           <Footer />
