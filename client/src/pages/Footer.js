@@ -13,7 +13,7 @@ const Footer = () => {
         </div>
         <div className='footerContent'>
           <Link to={'/contributors'}>
-            Contributers
+            Contributors
           </Link>
         </div>
         <div className='footerContent'>

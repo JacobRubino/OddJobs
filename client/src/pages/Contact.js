@@ -20,7 +20,7 @@ const Contact = () => {
   return (
     <section>
 
-      <p style={{ fontSize: '1.5rem', color: '#2a607c' }}>
+      <p style={{ fontSize: '1.5rem', color: '#2a607c', padding: '20px' }}>
         Together, let's make handyman services more accessible and convenient for clients while helping you thrive in your business. <br></br>
         <span style={{ color: 'navy' }}>For career opportunities please contact here.</span>
       </p>
