@@ -5,41 +5,41 @@ import './contributors.css'
 const contributers = () => {
     return (
         <div>
-            <p>Evan Sterling Miller
+            <ul>Evan Sterling Miller
                 <a href="https://github.com/EvanSterlingMiller">
-                    <li>
-                        <FaGithub /> 
-                    </li>
+                    <p>
+                        <FaGithub className="FaGithub"/> 
+                    </p>
                 </a>
-            </p>
-            <p>Sudarshan Samaddar
+            </ul>
+            <ul>Sudarshan Samaddar
                 <a href="https://github.com/meetsudarshan">
-                    <li>
-                        <FaGithub /> 
-                    </li>
+                    <p>
+                        <FaGithub className="FaGithub"/> 
+                    </p>
                 </a>
-            </p>
-            <p>Jacob Rubino
+            </ul>
+            <ul>Jacob Rubino
                 <a href="https://github.com/JacobRubino">
-                    <li>
-                        <FaGithub /> 
-                    </li>
+                    <p>
+                        <FaGithub className="FaGithub"/> 
+                    </p>
                 </a>
-            </p>
-            <p>Matt Fleming
+            </ul>
+            <ul>Matt Fleming
                 <a href="https://github.com/chartpro-com">
-                    <li>
-                        <FaGithub /> 
-                    </li>
+                    <p>
+                        <FaGithub className="FaGithub"/> 
+                    </p>
                 </a>
-            </p>
-            <p>Roxy Osorio
+            </ul>
+            <ul>Roxy Osorio
                 <a href="https://github.com/rosebudroro">
-                    <li>
-                        <FaGithub /> 
-                    </li>
+                    <p>
+                        <FaGithub className="FaGithub"/> 
+                    </p>
                 </a>
-            </p>
+            </ul>
         </div>
     )
 }

@@ -89,7 +89,7 @@ These instructions will help you determine the technologies used for the project
 
 ## Contributors 
 
-Odd Jobs is  created for Project 2 by the team "Mern Baby Mern" consisting of the following five members:
+Odd Jobs is  created for Project 3 by the team "Mern Baby Mern" consisting of the following five members:
 
 - [Evan Miller](https://github.com/EvanSterlingMiller)
 

@@ -64,6 +64,3 @@ const typeDefs = gql`
 `;
 
 module.exports = typeDefs;
-
-
-//added type feedback and addfeedback under Mutation

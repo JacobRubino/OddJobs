@@ -16,7 +16,7 @@ const AboutMe = () => {
         <div>
           <ul className="navigation">
             <li>
-              <a href="#job-opportunities">Life Made Easier</a>
+              <a href="#easy">Life Made Easier</a>
             </li>
             <li>
               <a href="#working-conditions">Where Do I Begin?</a>
@@ -32,7 +32,7 @@ const AboutMe = () => {
       <h4 style={{ color: 'navy' }}>Welcome to OddJobs, your one-stop destination for all your task-related needs! We are a dynamic and innovative company that connects individuals and businesses with skilled task-doers, helping you save time, enhance productivity and focus on what truly matters. </h4>
       <div className="hero"></div>
       <div className="content">
-        <div className="job-opportunities">
+        <div id="easy" className="job-opportunities">
           <img src={image5} className="float-left resized-image" alt="Job Opportunities" />
           <h2>Life Made Easier</h2>
           <p>At OddJobs, we understand that life can get overwhelming and that juggling multiple tasks on your to-do list can be challenging. That's why we've created a platform that gives you a network of skilled individuals who are ready to handle a wide variety of tasks with their expertise. At OddJobs, you can experience the true meaning of relaxation, knowing that your tasks are being handled efficiently and professionally. Say goodbye to stress and overwhelm and say hello to more time for the things you love. Let us help you make your life simpler, one task at a time!
@@ -53,6 +53,7 @@ const AboutMe = () => {
           <br />
           <br />
           <br />
+          <br />
           <h2>Job Opportunities</h2>
           <p>
           We are delighted to have you join our network of skilled professionals, and we are excited about the opportunities that lie ahead for your business. Our mission is to provide a platform where you can showcase your skills, gain visibility, and find new clients easily with the benefits of a flexible schedule. We are dedicated to supporting your success and helping you thrive in your career. We are here to support you every step of the way. Our dedicated support team is available to assist you with any inquiries or concerns you may have.
@@ -70,9 +71,8 @@ const AboutMe = () => {
         {/* ... */}
       </div>
       <div className="footer">
-        <h2>Made with < ImHeart /> by <FaGithub /> <a href="https://github.com/EvanSterlingMiller">Evan Sterling Miller</a>, <a href="https://github.com/meetsudarshan"> Sudarshan Samaddar</a>, <a href="https://github.com/JacobRubino">Jacob Rubino</a>, <a href="https://github.com/chartpro-com">Matt Fleming</a> & <a href="https://github.com/rosebudroro">Roxy Osorio</a></h2>
-        
-        <p>&copy; {new Date().getFullYear()} DailyWageEarners Community</p>
+        <h2>Made with < ImHeart /> by <FaGithub /> <a  style={{ color: 'black' }} href="https://github.com/EvanSterlingMiller">Evan Sterling Miller</a>, <a style={{ color: 'black' }} href="https://github.com/meetsudarshan"> Sudarshan Samaddar</a>, <a  style={{ color: 'black' }}href="https://github.com/JacobRubino">Jacob Rubino</a>, <a style={{ color: 'black' }} href="https://github.com/chartpro-com">Matt Fleming</a> & <a style={{ color: 'black' }} href="https://github.com/rosebudroro">Roxy Osorio</a></h2>
+        <p className="daily">&copy; {new Date().getFullYear()} DailyWageEarners Community</p>
       </div>
     </div>
   );

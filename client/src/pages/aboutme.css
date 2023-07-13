@@ -28,6 +28,14 @@ h4 {
     text-align: center;
     margin: 15px;
 }
+
+.daily {
+    margin-top: 15px;
+    text-align: right;
+    font-size: 13px;
+    margin-top: 30px;
+}
+
 .header {
     padding: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -213,6 +221,7 @@ p {
     clear: both;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
+    margin-top: 15px;
 }
 
 .footer h2 {
