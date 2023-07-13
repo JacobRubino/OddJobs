@@ -61,14 +61,15 @@
   justify-content: center;
   justify-items: center;
   text-align: center;
-  padding-bottom: 200px;
+  padding-bottom: 185px;
   flex-direction: column;
-  margin-top: 75px;
+  margin-top: 65px;
 }
 
 #help {
   font-size: 45px;
   font-family: "Segoe UI", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 35px;
 }
 
 .sel {
