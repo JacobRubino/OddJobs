@@ -9,3 +9,7 @@ p {
     justify-content: center;
     text-align: center;
 }
+
+.card {
+    padding: 20px;
+}
