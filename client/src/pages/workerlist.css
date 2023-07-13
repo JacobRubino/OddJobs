@@ -13,12 +13,12 @@
 .subheaderText {
   padding-top: 5px;
   text-decoration: underline;
-  padding-bottom: 5px;
 }
 
 
-.textContainer {
+.textContainer p {
  color: black;
+ text-align: left;
 }
 
 .clickable {
@@ -30,8 +30,14 @@
 }
 
 .thumbnailImage {
-  width: 200px;
-  height: 200px;
+  height: auto;
+  max-height: 300px;
+  min-width: 200px;
   object-fit: cover;
   margin-left: auto;
+}
+@media screen and (max-width: 950px) {
+  .thumbnailImage {
+    display: none;
+  }
 }
