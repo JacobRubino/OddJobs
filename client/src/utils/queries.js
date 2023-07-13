@@ -25,6 +25,7 @@ export const GET_WORKERS = gql`
       email
       state
       phone
+      rate
     }
   }
 `;

@@ -10,6 +10,7 @@ const typeDefs = gql`
     email: String
     password: String
     phone: String
+    rate: Int
   }
   
   
