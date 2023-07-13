@@ -12,7 +12,7 @@ const Footer = () => {
           </Link>
         </div>
         <div className='footerContent'>
-          <Link to={'/contributors'}>
+          <Link to={'/contributers'}>
             Contributers
           </Link>
         </div>
