@@ -1,0 +1,11 @@
+.headingcontainer {
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.headingContent {
+  padding: 12px;
+  backdrop-filter: blur(6px) saturate(60%);
+  border-radius: 1rem;
+  overflow: hidden;
+}
