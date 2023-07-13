@@ -26,7 +26,6 @@ const resolvers = {
 
     // come up w/ a name for your function
     // have a query that take a state and or skill
-
     name: async (_, { state }) => {
       try {
         let query = {};
@@ -40,7 +39,6 @@ const resolvers = {
         throw new Error('Failed to retrieve profiles.');
       }
     }
-
   },
 
   Mutation: {

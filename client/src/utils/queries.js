@@ -15,6 +15,7 @@ export const ADD_PROFILE = gql`
   }
 `;
 
+
 export const GET_WORKERS = gql`
   query GetWorkers($state: String!) {
     name(state: $state) {
@@ -27,6 +28,7 @@ export const GET_WORKERS = gql`
     }
   }
 `;
+
 
 export const ADD_SKILL = gql`
   mutation AddSkill($profileId: ID!, $skill: String!) {

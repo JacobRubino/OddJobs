@@ -95,9 +95,9 @@
   }
   
   .feedback-comments-container {
-    margin-top: 20px;
+    /* margin-top: 20%; */
     width: 100%;
-    overflow: hidden;
+    overflow: auto;
   }
   
   .feedback-comments-row {

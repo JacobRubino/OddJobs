@@ -4,8 +4,9 @@ import { GET_CONTRACTOR_NAMES, GET_FEEDBACK } from '../utils/queries';
 import { ADD_FEEDBACK } from '../utils/mutations';
 
 import './feedback.css';
+import Auth from '../utils/auth';
 
-const Feedback = ({ isLoggedIn }) => {
+const Feedback = () => {
   const [contractorName, setContractorName] = useState('');
   const [starRating, setStarRating] = useState('');
   const [review, setReview] = useState('');
@@ -64,9 +65,35 @@ const Feedback = ({ isLoggedIn }) => {
     return [...filledStars, ...emptyStars];
   };
 
+  // Check if the user is logged in
+  const isLoggedIn = Auth.loggedIn();
+
   return (
     <div className="feedback-container">
-      {!isLoggedIn ? (
+      {isLoggedIn ? (
+        <div className="feedback-comments-container">
+          <h3>Feedback Comments:</h3>
+          <div className="feedback-comments-row">
+            {feedback.map((comment, index) => (
+              <div key={index} className="card comment-card">
+                <div className="card-body">
+                  <h5 className="card-title">{comment.contractorName}</h5>
+                  <h6 className="card-subtitle mb-2 text-muted">
+                    Rating: {convertToStars(comment.starRating)}
+                  </h6>
+                  {isLoggedIn && (
+                    <>
+                      <p className="card-text">Date of Service: {comment.dateOfService}</p>
+                      <p className="card-text">User Name: {comment.userName}</p>
+                    </>
+                  )}
+                  <p className="card-text">Review: {comment.review}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ) : (
         <>
           <h2 className="text-center">
             Your voice matters!!! Help others by providing feedback for the contractor you hired.
@@ -128,27 +155,28 @@ const Feedback = ({ isLoggedIn }) => {
               Add Feedback
             </button>
           </form>
-        </>
-      ) : null}
+          <div className="feedback-comments-container">
+            <h3>Feedback Comments:</h3>
+            <div className="feedback-comments-row">
+              {feedback.map((comment, index) => (
+                <div key={index} className="card comment-card">
+                  <div className="card-body">
+                    <h5 className="card-title">{comment.contractorName}</h5>
+                    <h6 className="card-subtitle mb-2 text-muted">
+                      Rating: {convertToStars(comment.starRating)}
+                    </h6>
 
-      <div className="feedback-comments-container">
-        <h3>Feedback Comments:</h3>
-        <div className="feedback-comments-row">
-          {feedback.map((comment, index) => (
-            <div key={index} className="card comment-card">
-              <div className="card-body">
-                <h5 className="card-title">{comment.contractorName}</h5>
-                <h6 className="card-subtitle mb-2 text-muted">
-                  Rating: {convertToStars(comment.starRating)}
-                </h6>
-                <p className="card-text">Date of Service: {comment.dateOfService}</p>
-                <p className="card-text">User Name: {comment.userName}</p>
-                <p className="card-text">Review: {comment.review}</p>
-              </div>
+                        <p className="card-text">Date of Service: {comment.dateOfService}</p>
+                        <p className="card-text">User Name: {comment.userName}</p>
+
+                    <p className="card-text">Review: {comment.review}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };
