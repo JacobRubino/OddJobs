@@ -18,7 +18,6 @@ const WorkerList = ({ state }) => {
     <div>
       {workers.map((worker) => (
         <Card className='workerCard' key={worker._id}>
-          
           <div className='textContainer'>
             <h1 className='headerheadText'>{worker.name}</h1>
             <p>Works as a: {worker.skills}</p>
