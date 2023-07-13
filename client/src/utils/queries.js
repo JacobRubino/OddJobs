@@ -26,6 +26,7 @@ export const GET_WORKERS = gql`
       state
       phone
       rate
+      city
     }
   }
 `;
