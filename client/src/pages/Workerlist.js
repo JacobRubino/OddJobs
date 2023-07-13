@@ -21,7 +21,7 @@ const WorkerList = ({ state }) => {
           <p>Works as a: {worker.skills}</p>
           <h2>About {worker.name}</h2>
           <p>Lives in: {worker.state}</p>
-          <p>Rate per hour: {worker.rate}</p>
+          <p>Rate(in $$) per hour: {worker.rate}</p>
           <p>Email: {worker.email}</p>
           <p>Phone: {worker.phone}</p>
           
