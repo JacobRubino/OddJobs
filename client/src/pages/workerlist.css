@@ -19,3 +19,11 @@
 .textContainer {
  color: black;
 }
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  text-decoration: underline;
+}
