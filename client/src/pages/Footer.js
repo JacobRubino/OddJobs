@@ -12,8 +12,8 @@ const Footer = () => {
           </Link>
         </div>
         <div className='footerContent'>
-          <Link to={'/contributers'}>
-            Contributers
+          <Link to={'/contributors'}>
+            Contributors
           </Link>
         </div>
         <div className='footerContent'>

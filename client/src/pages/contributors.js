@@ -1,6 +1,6 @@
 import React from "react"
 import {FaGithub} from 'react-icons/fa'
-import './contributers.css'
+import './contributors.css'
 
 const contributers = () => {
     return (
