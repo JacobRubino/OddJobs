@@ -7,7 +7,7 @@
   text-align: center;
   color: aliceblue;
   margin-top: 85px;
-  margin-bottom: 200px;
+  margin-bottom: 300px;
 }
 .image {
   width: 1000px;
@@ -63,6 +63,7 @@
   text-align: center;
   padding-bottom: 200px;
   flex-direction: column;
+  margin-top: 75px;
 }
 
 #help {
