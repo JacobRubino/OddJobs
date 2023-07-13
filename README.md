@@ -85,11 +85,11 @@ These instructions will help you determine the technologies used for the project
 
 ## Credits
 
-- Educational resources like W3Schools, Stack Overflow were used to help our team better understand concepts and fine-tune our vision.
+- Educational resources like W3Schools, Stack Overflow were used to help our team better understand concepts and fine-tune our vision. Images are borrowed from Unsplash and other copyrightfree resources. 
 
 ## Contributors 
 
-Castle Journal was originally created for Project 2 by the team "Samurai's Code" consisting of the following four members:
+Odd Jobs is  created for Project 2 by the team "Mern Baby Mern" consisting of the following five members:
 
 - [Evan Miller](https://github.com/EvanSterlingMiller)
 
