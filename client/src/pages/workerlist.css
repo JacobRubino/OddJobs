@@ -1,0 +1,21 @@
+.workerCard {
+  margin: 20px 15%;
+  border: 1px solid #000;
+  border-radius: 2ch;
+  padding: 20px 20px;
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.62);
+  display: flex;
+}
+.headerheadText {
+  padding: 5px 0px;
+}
+.subheaderText {
+  padding-top: 5px;
+  text-decoration: underline;
+  padding-bottom: 5px;
+}
+
+
+.textContainer {
+ color: black;
+}
