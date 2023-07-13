@@ -1,6 +1,8 @@
 import React from 'react';
-import { FaGithub } from 'react-icons/fa';
-import { ImHeart } from 'react-icons/im';
+import image1 from '../images/aboutme1.jpg';
+import image2 from '../images/aboutme2.jpg';
+import image3 from '../images/aboutme3.jpg';
+import image4 from '../images/aboutme4.jpg';
 import './aboutme.css';
 
 const AboutMe = () => {
@@ -32,26 +34,20 @@ const AboutMe = () => {
           productivity and focus on what truly matters.
         </p>
       </div>
-
-      {/* <h4 style={{ color: 'navy' }}>Section Title</h4> */}
-
+      <h4 style={{ color: 'navy' }}>Welcome to the OddJobs community! We are delighted to have you join our network of skilled professionals, and we are excited about the opportunities that lie ahead for your handyman business.</h4>
       <div className="hero"></div>
-      {/* <div className="zero">What do we offer</div> */}
-
-      <div className="container">
-        <div id="job-opportunities" className="card card-aboutme">
-          <h2>Life Made Easier</h2>
+      <div className="content">
+        <div className="job-opportunities">
+          <img src={image1} className="float-left resized-image" alt="Job Opportunities" />
+          <h2>Job Opportunities</h2>
+        
           <p>
-            We are delighted to have you join our network of skilled professionals, and we are excited about the
-            opportunities that lie ahead for your business. Our mission is to provide a platform where you can showcase
-            your skills, gain visibility, and find new clients easily. We are dedicated to supporting your success and
-            helping you thrive in your handyman career. We are delighted to have you join our network of skilled
-            professionals, and we are excited about the opportunities that lie ahead for your handyman business.
+          At OddJobs, we understand the importance of connecting handymen with customers who require their services. Our mission is to provide a platform where you can showcase your skills, gain visibility, and find new clients easily. We are dedicated to supporting your success and helping you thrive in your handyman career.
           </p>
         </div>
-
-        <div id="working-conditions" className="card card-aboutme">
-          <h2>Job Opportunities</h2>
+        <div id="working-conditions" className="working-conditions">
+          <img src={image2} className="float-right resized-image" alt="Working Conditions" />
+          <h2>Working Conditions</h2>
           <p>
             As a member of the OddJobs network, you can expect the following benefits:
             <ul>
@@ -83,14 +79,8 @@ const AboutMe = () => {
       </div>
 
       <div className="footer">
-        <h2>
-          Made with <ImHeart /> by <FaGithub /> <a href="https://github.com/EvanSterlingMiller">Evan Sterling Miller</a>,{' '}
-          <a href="https://github.com/meetsudarshan"> Sudarshan Samaddar</a>,{' '}
-          <a href="https://github.com/JacobRubino">Jacob Rubino</a>,{' '}
-          <a href="https://github.com/chartpro-com">Matt Fleming</a> & <a href="https://github.com/rosebudroro">Roxy Osorio</a>
-        </h2>
-
-        <p>&copy; {new Date().getFullYear()} OddJobs Community</p>
+        <h2>Made with ❤️️ by DailyWageEarners</h2>
+        <p>&copy; {new Date().getFullYear()} DailyWageEarners Community</p>
       </div>
     </div>
   );
