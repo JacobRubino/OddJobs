@@ -30,7 +30,7 @@ const WorkerList = ({ state }) => {
         <Card className="workerCard" key={worker._id}>
           <div className="textContainer">
             <h1 className="headerheadText">{worker.name}</h1>
-            <p>Works as a: {worker.skills.join(', ')}</p>
+            <p>Skilled in: {worker.skills.join(', ')}</p>
             <h3 className="subheaderText">About {worker.name}</h3>
             <p>Lives in: {worker.state}</p>
             <p>City: {worker.city}</p>

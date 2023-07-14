@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useQuery, useMutation } from '@apollo/client';
 import { GET_CONTRACTOR_NAMES, GET_FEEDBACK } from '../utils/queries';
 import { ADD_FEEDBACK } from '../utils/mutations';
@@ -12,9 +12,11 @@ const Feedback = () => {
   const [review, setReview] = useState('');
   const [dateOfService, setDateOfService] = useState('');
   const [userName, setUserName] = useState('');
+  const [dateError, setDateError] = useState('');
   const { loading, error, data } = useQuery(GET_CONTRACTOR_NAMES);
   const { loading: feedbackLoading, error: feedbackError, data: feedbackData } = useQuery(GET_FEEDBACK);
   const [addFeedback] = useMutation(ADD_FEEDBACK);
+  const dateOfServiceRef = useRef(null);
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error fetching contractor names: {error.message}</div>;
@@ -26,6 +28,15 @@ const Feedback = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Validate date format before submitting
+    const dateRegex = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/\d{4}$/;
+    if (!dateRegex.test(dateOfService)) {
+      setDateError('Invalid date format. Please enter the date in MM/DD/YYYY format.');
+      return;
+    }
+
+    
 
     addFeedback({
       variables: {
@@ -48,6 +59,26 @@ const Feedback = () => {
         console.error(err);
       });
   };
+
+  const handleBlur = () => {
+    // Check if the entered date is invalid
+    const dateRegex = /^(0?[1-9]|1[0-2])\/(0?[1-9]|[12]\d|3[01])\/\d{4}$/;
+    if (dateOfService && !dateRegex.test(dateOfService)) {
+      setDateError('Invalid date format. Please enter the date in MM/DD/YYYY format.');
+      dateOfServiceRef.current.focus();
+    } else {
+      // Pre-fill leading zero for single-digit month or day
+      const [month, day, year] = dateOfService.split('/');
+  
+      const formattedMonth = month.length === 1 ? `0${month}` : month;
+      const formattedDay = day.length === 1 ? `0${day}` : day;
+      const formattedDate = `${formattedMonth}/${formattedDay}/${year}`;
+  
+      setDateOfService(formattedDate);
+      setDateError('');
+    }
+  };
+  
 
   // Function to convert numeric rating to stars
   const convertToStars = (rating) => {
@@ -121,7 +152,10 @@ const Feedback = () => {
               className="form-control input-field"
               value={dateOfService}
               onChange={(e) => setDateOfService(e.target.value)}
+              onBlur={handleBlur}
+              ref={dateOfServiceRef}
             />
+            {dateError && <p className="error-message">{dateError}</p>}
             <input
               type="text"
               id="user-name"
@@ -166,8 +200,8 @@ const Feedback = () => {
                       Rating: {convertToStars(comment.starRating)}
                     </h6>
 
-                        <p className="card-text">Date of Service: {comment.dateOfService}</p>
-                        <p className="card-text">User Name: {comment.userName}</p>
+                    <p className="card-text">Date of Service: {comment.dateOfService}</p>
+                    <p className="card-text">User Name: {comment.userName}</p>
 
                     <p className="card-text">Review: {comment.review}</p>
                   </div>

@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { ADD_PROFILE } from '../utils/mutations';
-import Dialog from '../components/Dialog'; // Import or replace with your dialog component
+import Dialog from '../components/Dialog';
+import States from '../components/states';
 
 import './signup.css';
 
@@ -22,6 +23,7 @@ const Signup = () => {
   });
   const [addProfile, { error, data }] = useMutation(ADD_PROFILE);
   const [dialogVisible, setDialogVisible] = useState(false);
+  const [phoneError, setPhoneError] = useState('');
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -40,6 +42,18 @@ const Signup = () => {
     });
   };
 
+  const validatePhoneNumber = () => {
+    if (formState.phone.length !== 10) {
+      setPhoneError('Invalid phone number');
+    } else {
+      setPhoneError('');
+    }
+  };
+
+  const handleBlur = () => {
+    validatePhoneNumber();
+  };
+
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -50,6 +64,13 @@ const Signup = () => {
 
     const rate = parseInt(formState.rate, 10);
     console.log(typeof rate);
+
+    validatePhoneNumber();
+
+    if (phoneError) {
+      console.log('Phone validation error:', phoneError);
+      return;
+    }
 
     try {
       const { data } = await addProfile({
@@ -101,14 +122,19 @@ const Signup = () => {
                   value={formState.city}
                   onChange={handleChange}
                 />
-                <input
-                  className="form-input"
-                  placeholder="Your State"
+                <select
+                  className="form-select" 
                   name="state"
-                  type="text"
                   value={formState.state}
                   onChange={handleChange}
-                />
+                >
+                  <option value="">Select State</option>
+                  {States.map((state) => (
+                    <option key={state.abbreviation} value={state.name}>
+                      {state.name}
+                    </option>
+                  ))}
+                </select>
                 <input
                   className="form-input"
                   placeholder="wage per hour"
@@ -132,7 +158,9 @@ const Signup = () => {
                   type="tel"
                   value={formState.phone}
                   onChange={handleChange}
+                  onBlur={handleBlur}
                 />
+                {phoneError && <p className="error-message">{phoneError}</p>}
                 <input
                   className="form-input"
                   placeholder="******"

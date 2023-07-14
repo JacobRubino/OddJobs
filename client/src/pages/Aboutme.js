@@ -1,7 +1,7 @@
 import React from 'react';
 import image1 from '../images/aboutme1.jpg';
 import image3 from '../images/aboutme3.jpg';
-import image4 from '../images/aboutme4.jpg';
+// import image4 from '../images/aboutme4.jpg';
 import image5 from '../images/girlSmilingOnCouch.jpg';
 import { FaGithub } from 'react-icons/fa';
 import { ImHeart } from 'react-icons/im';
@@ -25,11 +25,12 @@ const AboutMe = () => {
               <a href="#community-support">Job Opportunities</a>
             </li>
           </ul>
+        
         </div>
         <br></br>
-
+        <p>Welcome to OddJobs, your <span style={{ color: 'yellow' }}>one-stop destination</span> for all your task-related needs! We are a dynamic and innovative company that connects individuals and businesses with skilled task-doers, helping you save time, enhance productivity, and focus on what truly matters.</p>
       </div>
-      <h4 style={{ color: 'navy' }}>Welcome to OddJobs, your one-stop destination for all your task-related needs! We are a dynamic and innovative company that connects individuals and businesses with skilled task-doers, helping you save time, enhance productivity and focus on what truly matters. </h4>
+      {/* <h4 style={{ color: 'navy' }}>Welcome to OddJobs, your one-stop destination for all your task-related needs! We are a dynamic and innovative company that connects individuals and businesses with skilled task-doers, helping you save time, enhance productivity and focus on what truly matters. </h4> */}
       <div className="hero"></div>
       <div className="content">
         <div id="easy" className="job-opportunities">
